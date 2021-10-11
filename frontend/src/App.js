@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import NavBar from "./components/NavBar/NavBar";
+import UploadPage from "./components/UploadPage/UploadPage";
 
 
 function App() {
@@ -16,14 +17,17 @@ function App() {
 
   return (
     <>
+      <NavBar />
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/">
-            <NavBar />
+          <Route exact path="/">
+          </Route>
+          <Route path="/upload">
+            <UploadPage />
           </Route>
         </Switch>
       )}
