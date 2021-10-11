@@ -10,5 +10,18 @@ router.get('', asyncHandler(async (req, res) => {
     res.json(photos);
 }))
 
+router.post(
+    '/',
+    asyncHandler(async (req, res, next) => {
+      const { imageUrl } = req.body;
+
+      const photo = await Photo.uploadPhotos({ photos });
+
+      return res.json({
+        photo,
+      });
+    }),
+  );
+
 
 module.exports = router

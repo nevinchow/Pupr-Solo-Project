@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import NavBar from "./components/NavBar/NavBar";
 import UploadPage from "./components/UploadPage/UploadPage";
+import SuggestionContainer from"./components/SuggestionContainer/SuggestionContainer"
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route exact path="/">
+          <SuggestionContainer />
           </Route>
           <Route path="/upload">
             <UploadPage />
