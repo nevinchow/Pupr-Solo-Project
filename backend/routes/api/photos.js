@@ -9,10 +9,23 @@ const { Photo } = require('../../db/models')
 
 router.get('/', asyncHandler(async (req, res) => {
 
-    const photos = await Photo.findAll();
+    const photos = await Photo.findAll()
 
     res.json(photos);
 }))
+
+// router.put('/:id', asyncHandler(async (req, res) => {
+//     const
+// }))
+
+
+// router.get('/:id', asyncHandler(async (req, res) => {
+
+//     const photos = await Photo.findByPk(req.params.id)
+
+//     return res.json(photos);
+// }))
+
 
 
 router.post('/', asyncHandler(async (req, res) => {

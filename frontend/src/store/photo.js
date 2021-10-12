@@ -1,7 +1,7 @@
 import { csrfFetch } from "./csrf"
 const LOAD_PHOTOS = 'photos/loadPhotos'
 const ADD_PHOTOS = 'photos/addPhotos'
-const SET_PHOTOS = 'photos/setPhotos'
+
 
 const loadPhotos = (photos) => ({
     type: LOAD_PHOTOS,
@@ -13,13 +13,9 @@ const addPhoto = (photo) => ({
     photo,
 })
 
-const setPhotos = (photo) => ({
-    type: SET_PHOTOS,
-    photo
-})
 
 
-export const getPhotos = () => async (dispatch) => {
+export const getPhotos = (userId) => async (dispatch) => {
     const reponse = await fetch('/api/photos')
     const photos = await reponse.json();
     dispatch(loadPhotos(photos))
@@ -35,6 +31,19 @@ const photo = await response.json();
 dispatch(addPhoto(photo));
 return photo;
 };
+
+export const editPhotos = (payload) => async (dispatch) => {
+    const response = await fetch(`/api/photos/${payload.id}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload)
+    })
+        if (response.ok) {
+            const data = await response.json();
+            dispatch(addPhoto(data))
+            return data
+        }
+}
 
 
 const initialState = {
@@ -63,9 +72,7 @@ const photoReducer = (state = initialState, action) => {
                     ...action.photo,
                 }
             }
-        // case SET_PHOTOS:
-        //     newState = {...state}
-        //     newState.photo = action.payload;
+
         default:
         return state;
     }
