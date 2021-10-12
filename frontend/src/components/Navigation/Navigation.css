@@ -1,0 +1,14 @@
+.puprLink {
+    position: relative;
+    right: 5px;
+    bottom: 110px;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+.userButton {
+    position: relative;
+    left: 1200px;
+    bottom: 110px;
+}

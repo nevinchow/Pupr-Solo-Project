@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux'
 function UploadPage() {
     const dispatch = useDispatch();
     const [imageUrl, setImageUrl] = useState("")
+    const [name, setName] = useState('')
     const history = useHistory();
     const user = useSelector(state => state.session.user)
 
@@ -19,6 +20,7 @@ function UploadPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = {
+            name,
             imageUrl,
             userId: user.id
         }
@@ -37,6 +39,13 @@ function UploadPage() {
                 Drag & drop photos and videos here
             </h3>
             <form >
+                <label>
+                    Name
+                    <input type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    />
+                </label>
                 <label>
                     Image URL:
                     <input type="text"

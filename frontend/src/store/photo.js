@@ -33,7 +33,7 @@ return photo;
 };
 
 export const editPhotos = (payload) => async (dispatch) => {
-    const response = await fetch(`/api/photos/${payload.id}`, {
+    const response = await csrfFetch(`/api/photos/${payload.id}`, {
         method: "PUT",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(payload)

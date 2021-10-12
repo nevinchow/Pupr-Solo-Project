@@ -1,8 +1,9 @@
+
 const csrf = require('csurf')
 const express = require('express')
 const router = express.Router();
 const asyncHandler = require('express-async-handler')
-
+const PhotoRepository = require('../../db/photo-repository')
 
 
 const { Photo } = require('../../db/models')
@@ -33,8 +34,8 @@ router.get('/', asyncHandler(async (req, res) => {
 }))
 
 router.put('/:id', asyncHandler(async (req, res) => {
-    const id = await Photo.update(req.body);
-    const photo = await Photo.one(id)
+    const id = await PhotoRepository.update(req.body);
+    const photo = await PhotoRepository.one(id)
     return res.json(photo)
 }))
 
@@ -49,8 +50,9 @@ router.put('/:id', asyncHandler(async (req, res) => {
 
 
 router.post('/', asyncHandler(async (req, res) => {
-    const {imageUrl, userId} = req.body
+    const {name, imageUrl, userId} = req.body
     const photo = await Photo.create({
+        name,
         imageUrl,
         userId
     });
