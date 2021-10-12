@@ -15,8 +15,7 @@ function ProfilePage() {
 
     return (
         <div>
-
-            {photos.map((photo) => <img key={photo.id} photo={photo} src={photo.imageUrl} alt="image"/>)}
+            {photos.map((photo) => <img key={photo.id} photo={photo} src={photo.imageUrl} alt="dog"/>)}
         </div>
     )
 }

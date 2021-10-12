@@ -3,15 +3,28 @@ import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import React from 'react'
 import * as photoActions from "../../store/photo"
+import { useHistory } from 'react-router'
+import { uploadPhotos } from '../../store/photo'
 
 
 function UploadPage() {
     const dispatch = useDispatch();
     const [imageUrl, setImageUrl] = useState("")
-    const handleSubmit = (e) => {
+    const history = useHistory();
+
+
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        return dispatch(photoActions.uploadPhotos({imageUrl}))
+        const payload = {
+            imageUrl
+        }
+        let newImage = await dispatch(uploadPhotos(payload))
+        if (newImage) {
+            history.push(`/api/photos/`)
+        }
     }
+
     return (
         <div>
             <h2>
@@ -20,7 +33,7 @@ function UploadPage() {
             <h3>
                 Drag & drop photos and videos here
             </h3>
-            <form onSubmit={handleSubmit}>
+            <form >
                 <label>
                     Image URL:
                     <input type="text"
@@ -28,7 +41,7 @@ function UploadPage() {
                     onChange={(e) => setImageUrl(e.target.value)}
                     />
                 </label>
-                <button type='submit'>Upload</button>
+                <button type='submit' onClick={handleSubmit}>Upload</button>
             </form>
         </div>
     )
