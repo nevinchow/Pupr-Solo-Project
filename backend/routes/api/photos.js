@@ -16,12 +16,11 @@ router.get('/', asyncHandler(async (req, res) => {
 
 
 router.post('/', asyncHandler(async (req, res) => {
-    const {imageUrl} = req.body
+    const {imageUrl, userId} = req.body
     const photo = await Photo.create({
         imageUrl,
-        userId: 4
+        userId
     });
-
     return res.redirect(`/api/photos`)
 }))
 

@@ -6,8 +6,7 @@ import { useSelector } from "react-redux";
 function ProfilePage() {
     const dispatch = useDispatch();
     const photos = useSelector(state => (Object.values(state.photo)))
-
-    console.log(photos)
+    const user = useSelector(state => state.session.user)
 
     useEffect(() => {
         dispatch(getPhotos())
@@ -15,7 +14,7 @@ function ProfilePage() {
 
     return (
         <div>
-            {photos.map((photo) => <img key={photo.id} photo={photo} src={photo.imageUrl} alt="dog"/>)}
+            {photos.map((photo) => <img key={photo.id} photo={photo} src={photo.imageUrl} value={user.id} alt="dog"/>)}
         </div>
     )
 }

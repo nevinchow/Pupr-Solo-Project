@@ -8,8 +8,8 @@ module.exports = {
 
       */
    return queryInterface.bulkInsert('Photos', [
-     {name: "Test", imageUrl: "http://thecatandthedog.com/wp-content/uploads/2020/11/105992231-1561667465295gettyimages-521697453.jpeg", userId:5, createdAt: new Date(), updatedAt: new Date()},
-     {name: "Test", imageUrl: "http://thecatandthedog.com/wp-content/uploads/2020/11/105992231-1561667465295gettyimages-521697453.jpeg", userId:4, createdAt: new Date(), updatedAt: new Date()}
+     {name: "Test", imageUrl: "http://thecatandthedog.com/wp-content/uploads/2020/11/105992231-1561667465295gettyimages-521697453.jpeg", createdAt: new Date(), updatedAt: new Date()},
+     {name: "Test", imageUrl: "http://thecatandthedog.com/wp-content/uploads/2020/11/105992231-1561667465295gettyimages-521697453.jpeg", createdAt: new Date(), updatedAt: new Date()}
     ], {});
   },
 
