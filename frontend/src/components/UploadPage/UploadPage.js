@@ -5,19 +5,22 @@ import React from 'react'
 import * as photoActions from "../../store/photo"
 import { useHistory } from 'react-router'
 import { uploadPhotos } from '../../store/photo'
+import { useSelector } from 'react-redux'
 
 
 function UploadPage() {
     const dispatch = useDispatch();
     const [imageUrl, setImageUrl] = useState("")
     const history = useHistory();
+    const user = useSelector(state => state.session.user)
 
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = {
-            imageUrl
+            imageUrl,
+            userId: user.id
         }
         let newImage = await dispatch(uploadPhotos(payload))
         if (newImage) {
