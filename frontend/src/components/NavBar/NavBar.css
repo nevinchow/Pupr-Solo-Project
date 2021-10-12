@@ -1,0 +1,26 @@
+.navBar {
+    background-color: #212124;
+    height: 89px;
+    width: 120%;
+    margin: none;
+    padding: none;
+    position: relative;
+    bottom: 8px;
+    right: 8px;
+}
+
+.uploadLink {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    left: 175px;
+    top: 10px;
+}
+
+.photoLink {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    left: 150px;
+    top: 10px;
+}

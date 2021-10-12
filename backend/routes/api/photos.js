@@ -1,11 +1,30 @@
+
 const csrf = require('csurf')
 const express = require('express')
 const router = express.Router();
 const asyncHandler = require('express-async-handler')
-
+const PhotoRepository = require('../../db/photo-repository')
 
 
 const { Photo } = require('../../db/models')
+
+async function update(details) {
+    const id = details.id
+    delete details.id
+    await Photo.update(
+        details,
+        {
+            where: {id},
+            returning: true,
+            plain: true
+        }
+    )
+    return id
+}
+
+async function one(id) {
+    return await Photo.findByPk(id)
+}
 
 router.get('/', asyncHandler(async (req, res) => {
 
@@ -14,9 +33,11 @@ router.get('/', asyncHandler(async (req, res) => {
     res.json(photos);
 }))
 
-// router.put('/:id', asyncHandler(async (req, res) => {
-//     const
-// }))
+router.put('/:id', asyncHandler(async (req, res) => {
+    const id = await PhotoRepository.update(req.body);
+    const photo = await PhotoRepository.one(id)
+    return res.json(photo)
+}))
 
 
 // router.get('/:id', asyncHandler(async (req, res) => {
@@ -29,8 +50,9 @@ router.get('/', asyncHandler(async (req, res) => {
 
 
 router.post('/', asyncHandler(async (req, res) => {
-    const {imageUrl, userId} = req.body
+    const {name, imageUrl, userId} = req.body
     const photo = await Photo.create({
+        name,
         imageUrl,
         userId
     });
