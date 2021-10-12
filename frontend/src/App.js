@@ -6,6 +6,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import NavBar from "./components/NavBar/NavBar";
 import UploadPage from "./components/UploadPage/UploadPage";
+import SuggestionContainer from"./components/SuggestionContainer/SuggestionContainer"
+import ProfilePage from "./components/ProfilePage/ProfilePage";
 
 
 function App() {
@@ -24,10 +26,14 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route exact path="/">
-          </Route>
-          <Route path="/upload">
+          <Route path="/api/photos/upload">
             <UploadPage />
+          </Route>
+          <Route path="/api/photos">
+            <ProfilePage />
+          </Route>
+          <Route exact path="/">
+          <SuggestionContainer />
           </Route>
         </Switch>
       )}

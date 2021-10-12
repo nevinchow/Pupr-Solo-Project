@@ -1,7 +1,7 @@
 import styles from './PhotoContainer.css';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 import { getPhotos } from '../../store/photo';
 
 
@@ -15,9 +15,9 @@ const PhotoContainer = () => {
 
     return (
         <div>
-            <a>
-                {photos.map((photo) => <a key={photo.id} photo={photo} />)}
-            </a>
+            {photos.map((photo) =>
+                <img key={photo.id} photo={photo} src={`${photo.imageUrl}`}/>
+            )}
         </div>
     )
 }
