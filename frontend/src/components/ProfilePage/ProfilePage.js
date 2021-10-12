@@ -3,6 +3,7 @@ import { getPhotos } from "../../store/photo"
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
+
 function ProfilePage() {
     const dispatch = useDispatch();
     const photos = useSelector(state => (Object.values(state.photo)))
@@ -12,9 +13,14 @@ function ProfilePage() {
         dispatch(getPhotos())
     }, [dispatch])
 
+
     return (
         <div>
-            {photos.map((photo) => <img key={photo.id} photo={photo} src={photo.imageUrl} value={user.id} alt="dog"/>)}
+            {photos.map((photo) =>
+            <a href={`http://localhost:3000/api/photos/${photo.id}/edit`}>
+            <img key={photo.id} src={`${photo.imageUrl}` }/>
+        </a>
+            )}
         </div>
     )
 }

@@ -19,7 +19,7 @@ const setPhotos = (photo) => ({
 })
 
 
-export const getPhotos = () => async (dispatch) => {
+export const getPhotos = (userId) => async (dispatch) => {
     const reponse = await fetch('/api/photos')
     const photos = await reponse.json();
     dispatch(loadPhotos(photos))
