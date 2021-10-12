@@ -15,7 +15,7 @@ const addPhotos = (photos) => ({
 
 const setPhotos = (photo) => ({
     type: SET_PHOTOS,
-    payload: photo
+    photo
 })
 
 
