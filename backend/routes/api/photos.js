@@ -4,16 +4,16 @@ const express = require('express')
 const router = express.Router();
 const asyncHandler = require('express-async-handler')
 const PhotoRepository = require('../../db/photo-repository')
+const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth');
 
 
 const { Photo } = require('../../db/models')
-const { User } = require('../../db/models')
+const {User} = require('../../db/models')
 
-router.get('/', asyncHandler(async (req, res) => {
-    const {id} = req.params
+router.get('/', requireAuth, asyncHandler(async (req, res) => {
     const photos = await Photo.findAll({
         where: {
-            userId: id
+            userId: req.user.id
         }
     })
     res.json(photos);
@@ -45,12 +45,7 @@ router.delete('/:id', asyncHandler(async (req, res) => {
     const {id} = req.params
     const photo = await Photo.findByPk((parseInt(req.params.id)))
     photo.destroy();
-    const photos = await Photo.findAll({
-        where: {
-            userId: id
-        }
-    })
-    return res.json(photos)
+    return res.json({id})
 }))
 
 
@@ -70,7 +65,7 @@ router.post('/', asyncHandler(async (req, res) => {
         imageUrl,
         userId
     });
-    return res.redirect(`/api/photos`)
+    return res.json(photo)
 }))
 
 module.exports = router
