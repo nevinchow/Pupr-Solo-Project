@@ -16,7 +16,7 @@ const addPhoto = (photo) => ({
 
 
 export const getPhotos = (userId) => async (dispatch) => {
-    const reponse = await fetch('/api/photos')
+    const reponse = await fetch(`/api/photos/${userId}`)
     const photos = await reponse.json();
     dispatch(loadPhotos(photos))
 }
@@ -33,8 +33,8 @@ return photo;
 };
 
 export const editPhotos = (payload) => async (dispatch) => {
-    const response = await csrfFetch(`/api/photos/${payload.id}`, {
-        method: "PUT",
+    const response = await csrfFetch(`/api/photos/${payload.photoId}/edit`, {
+        method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(payload)
     })

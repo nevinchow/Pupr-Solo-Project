@@ -14,7 +14,12 @@ function ProfilePage() {
     const user = useSelector(state => state.session.user)
 
     const [showEditPhotoForm, setShowEditPhotoForm] = useState(false)
+    const [photoId, setPhotoId ] = useState("")
 
+    const onClick = (e, photo) => {
+        setShowEditPhotoForm(true)
+        setPhotoId(photo.id)
+    }
 
     useEffect(() => {
         setShowEditPhotoForm(false);
@@ -27,7 +32,7 @@ function ProfilePage() {
 
     if (showEditPhotoForm) {
         content = (
-            <EditPhotoForm photos={photos} hideForm={() => setShowEditPhotoForm(false)} />
+            <EditPhotoForm photoId={photoId} photos={photos} hideForm={() => setShowEditPhotoForm(false)} />
         )
     }
     return (
@@ -37,7 +42,7 @@ function ProfilePage() {
                     <PhotoTile
                     key={photo.id}
                     photo={photo}
-                    onClick={() => setShowEditPhotoForm(true)}
+                    onClick={(e) => {onClick(e,photo)}}
                     />
                     )}
                     {content}

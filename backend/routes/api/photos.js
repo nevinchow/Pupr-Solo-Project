@@ -7,36 +7,28 @@ const PhotoRepository = require('../../db/photo-repository')
 
 
 const { Photo } = require('../../db/models')
+const { User } = require('../../db/models')
 
-async function update(details) {
-    const id = details.id
-    delete details.id
-    await Photo.update(
-        details,
-        {
-            where: {id},
-            returning: true,
-            plain: true
+router.get('/:id', asyncHandler(async (req, res) => {
+    const {id} = req.params
+    const photos = await Photo.findAll({
+        where: {
+            userId: id
         }
-    )
-    return id
-}
-
-async function one(id) {
-    return await Photo.findByPk(id)
-}
-
-router.get('/', asyncHandler(async (req, res) => {
-
-    const photos = await Photo.findAll()
-
+    })
     res.json(photos);
 }))
 
-router.put('/:id', asyncHandler(async (req, res) => {
-    const id = await PhotoRepository.update(req.body);
-    const photo = await PhotoRepository.one(id)
-    return res.json(photo)
+router.post('/:id/edit', asyncHandler(async (req, res) => {
+    const {id} = req.params
+    const {imageUrl} = req.body
+
+    const photoToUpdate = await Photo.findByPk(id)
+    let photo = {};
+
+    photo = {imageUrl}
+    updatedPhoto = await photoToUpdate.update(photo)
+    return res.json(updatedPhoto)
 }))
 
 

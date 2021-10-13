@@ -1,21 +1,22 @@
 import { editPhotos } from "../../store/photo";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
-function EditPhotoForm({photos, hideForm}) {
+
+function EditPhotoForm({photos, hideForm, photoId}) {
     const dispatch = useDispatch();
-    const [name, setName] = useState(photos.name)
-    const updateName = (e) => setName(e.target.value)
-
-
+    const [imageUrl, setImageUrl] = useState(photos.imageUrl)
+    const updateImageUrl = (e) => setImageUrl(e.target.value)
     const handleSubmit = async(e) => {
         e.preventDefault();
 
         const payload = {
             ...photos,
-            name
+            photoId,
+            imageUrl,
         };
-
+        // console.log(payload)
         let updatedPhoto = await dispatch(editPhotos(payload))
         if (updatedPhoto) {
             hideForm();
@@ -31,10 +32,10 @@ function EditPhotoForm({photos, hideForm}) {
     return (
         <section>
             <form onSubmit={handleSubmit}>
-                <input type="name"
-                placeholder="Name"
-                value={name}
-                onChange={updateName} />
+                <input type="imageUrl"
+                placeholder="ImageUrl"
+                value={imageUrl}
+                onChange={updateImageUrl} />
                 <button type="submit">Update Photo</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
             </form>

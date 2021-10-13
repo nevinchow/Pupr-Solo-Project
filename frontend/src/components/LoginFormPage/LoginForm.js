@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function LoginForm() {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const user = useSelector(state => state.session.user)
 
   const handleSubmit = (e) => {
     e.preventDefault();
