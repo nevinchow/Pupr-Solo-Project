@@ -51,28 +51,4 @@ router.post('/', asyncHandler(async (req, res) => {
     return res.redirect(`/api/photos`)
 }))
 
-// {
-//     where: {
-//         userId: res.locals.user.id
-//     }
-// }
-// {
-//     where: {
-//         userId: res.locals.
-//       }
-// }
-// router.post(
-//     '/',
-//     asyncHandler(async (req, res, next) => {
-//       const { imageUrl } = req.body;
-
-//       const photo = await Photo.uploadPhotos({ photos });
-
-//       return res.json({
-//         photo,
-//       });
-//     }),
-//   );
-
-
 module.exports = router
