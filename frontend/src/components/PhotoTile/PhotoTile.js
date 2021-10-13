@@ -9,7 +9,7 @@ function PhotoTile({photo, onClick}) {
                             <img className="photo" key={photo.id} src={`${photo.imageUrl}` }/>
                             </a>
                             <button className="editButton" onClick={onClick}>Edit</button>
-                            <button className="deleteButton">Delete</button>
+                           
             </div>
 
         </div>

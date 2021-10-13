@@ -5,10 +5,12 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import EditPhotoForm from "../EditPhotoForm/EditPhotoForm";
 import PhotoTile from "../PhotoTile/PhotoTile";
-
+import { removePhoto } from "../../store/photo";
+import { useHistory } from 'react-router'
 
 function ProfilePage() {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const photos = useSelector(state => (Object.values(state.photo)))
     const user = useSelector(state => state.session.user)
@@ -19,6 +21,13 @@ function ProfilePage() {
     const onClick = (e, photo) => {
         setShowEditPhotoForm(true)
         setPhotoId(photo.id)
+    }
+
+    const handleDeleteItem = async (e, photo) => {
+        setPhotoId(photo.id)
+        await dispatch(removePhoto(photo.id))
+
+        history.push('/api/photos')
     }
 
     useEffect(() => {
@@ -39,11 +48,14 @@ function ProfilePage() {
           (
                 <div>
                     {photos.map((photo) =>
+                    <>
                     <PhotoTile
                     key={photo.id}
                     photo={photo}
                     onClick={(e) => {onClick(e,photo)}}
                     />
+                    <button className="deleteButton" onClick={(e) => {handleDeleteItem(e, photo)}}>Delete</button>
+                    </>
                     )}
                     {content}
                 </div>
