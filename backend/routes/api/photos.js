@@ -9,6 +9,16 @@ const PhotoRepository = require('../../db/photo-repository')
 const { Photo } = require('../../db/models')
 const { User } = require('../../db/models')
 
+router.get('/', asyncHandler(async (req, res) => {
+    const {id} = req.params
+    const photos = await Photo.findAll({
+        where: {
+            userId: id
+        }
+    })
+    res.json(photos);
+}))
+
 router.get('/:id', asyncHandler(async (req, res) => {
     const {id} = req.params
     const photos = await Photo.findAll({
@@ -31,6 +41,18 @@ router.post('/:id/edit', asyncHandler(async (req, res) => {
     return res.json(updatedPhoto)
 }))
 
+router.delete('/:id', asyncHandler(async (req, res) => {
+    const {id} = req.params
+    const photo = await Photo.findByPk((parseInt(req.params.id)))
+    photo.destroy();
+    const photos = await Photo.findAll({
+        where: {
+            userId: id
+        }
+    })
+    return res.json(photos)
+}))
+
 
 // router.get('/:id', asyncHandler(async (req, res) => {
 
@@ -50,29 +72,5 @@ router.post('/', asyncHandler(async (req, res) => {
     });
     return res.redirect(`/api/photos`)
 }))
-
-// {
-//     where: {
-//         userId: res.locals.user.id
-//     }
-// }
-// {
-//     where: {
-//         userId: res.locals.
-//       }
-// }
-// router.post(
-//     '/',
-//     asyncHandler(async (req, res, next) => {
-//       const { imageUrl } = req.body;
-
-//       const photo = await Photo.uploadPhotos({ photos });
-
-//       return res.json({
-//         photo,
-//       });
-//     }),
-//   );
-
 
 module.exports = router
