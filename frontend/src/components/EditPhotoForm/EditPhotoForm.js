@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 
 function EditPhotoForm({photos, hideForm, photoId}) {
     const dispatch = useDispatch();
+    const albums = useSelector(state => Object.values(state.album))
+    console.log(albums)
     const [imageUrl, setImageUrl] = useState(photos.imageUrl)
     const updateImageUrl = (e) => setImageUrl(e.target.value)
     const handleSubmit = async(e) => {
@@ -36,6 +38,10 @@ function EditPhotoForm({photos, hideForm, photoId}) {
                 placeholder="ImageUrl"
                 value={imageUrl}
                 onChange={updateImageUrl} />
+                <select>
+                    {albums.map((album) => <option key={album.id} album={album}>{album.name}</option>)}
+                    <option>None</option>
+                </select>
                 <button type="submit">Update Photo</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
             </form>
