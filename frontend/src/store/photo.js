@@ -1,4 +1,6 @@
 import { csrfFetch } from "./csrf"
+import { LOAD_PHOTO_ALBUMS } from "./album"
+
 const LOAD_PHOTOS = 'photos/loadPhotos'
 const ADD_PHOTOS = 'photos/addPhotos'
 const DELETE_PHOTOS = 'photos/deletePhotos'
@@ -39,6 +41,14 @@ export const getPhotos = (userId) => async (dispatch) => {
     dispatch(loadPhotos(photos))
 }
 
+export const getPhotosByAlbumId = (albumId) => async (dispatch) => {
+    const response = await fetch(`/api/albums/${albumId}`)
+    const photos = await response.json();
+    dispatch(loadPhotos(photos))
+}
+
+
+
 export const uploadPhotos = (payload) => async (dispatch) => {
     const response = await csrfFetch('http://localhost:3000/api/photos', {
     method: 'POST',
@@ -75,6 +85,13 @@ const photoReducer = (state = initialState, action) => {
                 newState[photo.id] = photo;
             });
             return newState;
+        case LOAD_PHOTO_ALBUMS: {
+            let newState = {};
+            action.photos.forEach(photo => {
+                newState[photo.id] = photo;
+            });
+            return newState
+        }
         case ADD_PHOTOS:
             if (!state[action.photo.id]) {
                 const newState = {

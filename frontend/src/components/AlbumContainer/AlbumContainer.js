@@ -43,7 +43,7 @@ function AlbumContainer() {
             type="submit"
             onClick={handleSubmit}
             >+</button>
-            {albums.map((album) => <AlbumList key={album.id} album={album}/>)}
+            {albums.map((album) => <AlbumList key={album.id} album={album} />)}
         </div>
     )
 }
