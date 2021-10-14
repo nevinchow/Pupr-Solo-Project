@@ -7,7 +7,7 @@ const PhotoRepository = require('../../db/photo-repository')
 const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth');
 
 
-const { Photo } = require('../../db/models')
+const { Photo, Photo_Album, Album } = require('../../db/models')
 const {User} = require('../../db/models')
 
 router.get('/', requireAuth, asyncHandler(async (req, res) => {
@@ -31,13 +31,26 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 router.post('/:id/edit', asyncHandler(async (req, res) => {
     const {id} = req.params
-    const {imageUrl} = req.body
+    const {imageUrl, albumName} = req.body
 
     const photoToUpdate = await Photo.findByPk(id)
     let photo = {};
 
     photo = {imageUrl}
     updatedPhoto = await photoToUpdate.update(photo)
+
+    const album = await Album.findOne({
+        where: {
+            name: albumName
+        }
+    })
+    const albumId = album.id
+    const photo_album = await Photo_Album.create({
+        photoId: id,
+        albumId,
+
+    });
+
     return res.json(updatedPhoto)
 }))
 

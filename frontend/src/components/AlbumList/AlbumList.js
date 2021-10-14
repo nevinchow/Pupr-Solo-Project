@@ -4,27 +4,32 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router'
+import { getPhotosByAlbumId } from "../../store/album";
+import { removeAlbum } from "../../store/album";
 
 
 function AlbumList({album}) {
     const dispatch = useDispatch()
     const history = useHistory();
-    const [albumId, setAlbumId ] = useState("")
     const user = useSelector(state => state.session.user)
 
     const onClick = async(e) => {
-        setAlbumId(album.id)
+
+        await dispatch(getPhotosByAlbumId(album.id))
     }
 
-    // useEffect(() => {
-    //     dispatch(getPhotos(user.id, album.id))
-    // }, [dispatch, album.id])
+    const handleDeleteItem = async (e, album) => {
+        await dispatch(removeAlbum(album.id))
+        console.log(album)
+        history.push('/api/photos')
+    }
+
 
 
     return (
         <div>
-             <a onClick={onClick} key={album.id} href={`http://localhost:3000/api/albums/${album.id}`}>{album.name}
-                            </a>
+             <span onClick={onClick} key={album.id} href={``} >{album.name}</span>
+             <button onClick={(e) => {handleDeleteItem(e, album)}}>Delete</button>
         </div>
     )
 }
