@@ -7,6 +7,7 @@ import EditPhotoForm from "../EditPhotoForm/EditPhotoForm";
 import PhotoTile from "../PhotoTile/PhotoTile";
 import { removePhoto } from "../../store/photo";
 import { useHistory } from 'react-router'
+import AlbumContainer from "../AlbumContainer/AlbumContainer";
 
 function ProfilePage() {
     const dispatch = useDispatch();
@@ -45,7 +46,8 @@ function ProfilePage() {
         )
     }
     return (
-          (
+          <div>
+              <AlbumContainer/>
                 <div>
                     {photos.map((photo) =>
                     <>
@@ -59,7 +61,8 @@ function ProfilePage() {
                     )}
                     {content}
                 </div>
-            )
+
+          </div>
 
     )
 

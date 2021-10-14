@@ -10,6 +10,7 @@ import configureStore from "./store";
 import { restoreCSRF, csrfFetch } from "./store/csrf";
 import * as sessionActions from "./store/session";
 import * as photoActions from "./store/photo"
+import * as albumActions from './store/album'
 
 const store = configureStore();
 
@@ -20,6 +21,8 @@ if (process.env.NODE_ENV !== "production") {
   window.store = store;
   window.sessionActions = sessionActions;
   window.photoActions = photoActions;
+  window.albumActions = albumActions
+
 }
 
 function Root() {

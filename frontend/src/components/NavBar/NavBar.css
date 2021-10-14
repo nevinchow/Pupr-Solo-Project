@@ -24,3 +24,11 @@
     left: 150px;
     top: 10px;
 }
+
+.albumLink {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    left: 190px;
+    top: 10px;
+}
