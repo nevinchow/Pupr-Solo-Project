@@ -11,7 +11,7 @@ function EditPhotoForm({photos, hideForm, photoId}) {
     const [albumName, setAlbumName ] = useState("")
     const updateImageUrl = (e) => setImageUrl(e.target.value)
     const updateAlbumName = (e) => setAlbumName(e.target.value)
-        
+
 
 
     const handleSubmit = async(e) => {
@@ -24,7 +24,6 @@ function EditPhotoForm({photos, hideForm, photoId}) {
             albumName
 
         };
-        console.log(payload)
         let updatedPhoto = await dispatch(editPhotos(payload))
         if (updatedPhoto) {
             hideForm();
@@ -47,8 +46,8 @@ function EditPhotoForm({photos, hideForm, photoId}) {
                 <select
                 value={albumName}
                 onChange={updateAlbumName}>
+                    <option value="">Select an Album</option>
                     {albums.map((album) => <option key={album.id} value={album.name} >{album.name}</option>)}
-                    <option value>None</option>
                 </select>
                 <button type="submit">Update Photo</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>

@@ -45,11 +45,31 @@ router.post('/:id/edit', asyncHandler(async (req, res) => {
         }
     })
     const albumId = album.id
-    const photo_album = await Photo_Album.create({
-        photoId: id,
-        albumId,
 
-    });
+    const photo_albumsToDelete = await Photo_Album.findAll({
+        where: {
+            photoId: id
+        }
+    })
+
+    if (!photo_albumsToDelete) {
+        const photo_album = await Photo_Album.create({
+            photoId: id,
+            albumId,
+
+        });
+
+    } else {
+        for (let i = 0; i < photo_albumsToDelete.length; i++) {
+            let photo_albumRow = photo_albumsToDelete[i];
+            photo_albumRow.destroy();
+        }
+        const photo_album = await Photo_Album.create({
+            photoId: id,
+            albumId,
+
+        });
+    }
 
     return res.json(updatedPhoto)
 }))
