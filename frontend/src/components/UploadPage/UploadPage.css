@@ -1,0 +1,48 @@
+.uploadBackground {
+    height: 100vh;
+}
+
+.uploadContainer {
+    background-color: white;
+    width: 30vw;
+    height: 35vh;
+    position: relative;
+    left: 650px;
+    top: 150px;
+}
+
+.header1, .header2{
+    text-align: center;
+    padding: 15px;
+}
+
+.imageUrlInput {
+    display: block;
+    border-radius: .25rem;
+    border: 1px solid black;
+    height: 40px;
+    width: 360px;
+    margin: 10px;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    position: relative;
+    left: 90px;
+}
+
+.uploadButton {
+    width: 304px;
+    height: 40px;
+    position: relative;
+    left: 50px;
+    background-color: #128fdc;
+    border: none;
+    color: white;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    border-radius: .25rem;
+    margin-top: 15px;
+    position: relative;
+    left: 130px;
+
+}

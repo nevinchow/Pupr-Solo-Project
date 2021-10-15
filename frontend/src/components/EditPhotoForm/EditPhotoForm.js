@@ -2,6 +2,7 @@ import { editPhotos } from "../../store/photo";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import './EditPhotoForm.css'
 
 
 function EditPhotoForm({photos, hideForm, photoId}) {
@@ -37,22 +38,27 @@ function EditPhotoForm({photos, hideForm, photoId}) {
       };
 
     return (
+        <div className="editPhotoFormContainer">
         <section>
             <form onSubmit={handleSubmit}>
-                <input type="imageUrl"
-                placeholder="ImageUrl"
+                <input
+                className="editURL"
+                type="imageUrl"
+                placeholder="Image URL"
                 value={imageUrl}
                 onChange={updateImageUrl} />
                 <select
+                className="dropdown"
                 value={albumName}
                 onChange={updateAlbumName}>
                     <option value="">Select an Album</option>
                     {albums.map((album) => <option key={album.id} value={album.name} >{album.name}</option>)}
                 </select>
-                <button type="submit">Update Photo</button>
-                <button type="button" onClick={handleCancelClick}>Cancel</button>
+                <button className="updatePhotoButton" type="submit">Update Photo</button>
+                <button className="cancelUpdateButton" type="button" onClick={handleCancelClick}>Cancel</button>
             </form>
         </section>
+        </div>
     )
 }
 

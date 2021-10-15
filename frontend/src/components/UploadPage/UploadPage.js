@@ -31,30 +31,25 @@ function UploadPage() {
     }
 
     return (
-        <div>
-            <h2>
-                You can upload 999 more photos and videos.
+        <div className='uploadBackground'>
+            <div className='uploadContainer'>
+            <h2 className='header1'>
+                Welcome to Pupr!
             </h2>
-            <h3>
-                Drag & drop photos and videos here
+            <h3 className='header2'>
+                Please provide a link to photo to upload:
             </h3>
             <form >
-                <label>
-                    Name
-                    <input type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    />
-                </label>
-                <label>
-                    Image URL:
-                    <input type="text"
+                    <input
+                    className="imageUrlInput"
+                    placeholder='Image URL'
+                    type="text"
                     value={imageUrl}
                     onChange={(e) => setImageUrl(e.target.value)}
                     />
-                </label>
-                <button type='submit' onClick={handleSubmit}>Upload</button>
+                <button className="uploadButton"type='submit' onClick={handleSubmit}>Upload</button>
             </form>
+            </div>
         </div>
     )
 }

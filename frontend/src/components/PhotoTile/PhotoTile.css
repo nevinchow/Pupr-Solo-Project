@@ -20,18 +20,13 @@
 
 }
 
-.deleteButton {
-    height: 50px;
-    position: relative;
-    bottom: 80px;
-    right: 57px;
-    width: 52px;
-    text-align: center;
-
-}
 
 .photoTileContainer {
     display: inline-flex;
-    border: 1px solid black;
-    height: 200px;
+    border: 1px solid white;
+    background-color: white;
+    max-width: 60%;
+    position: relative;
+    bottom: 940px;
+    left: 300px;
 }

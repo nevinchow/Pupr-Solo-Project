@@ -6,6 +6,7 @@ import AlbumList from "../AlbumList/AlbumList";
 import { useState } from "react";
 import { createAlbum } from "../../store/album";
 import { useHistory } from 'react-router'
+import "./AlbumContainer.css"
 
 
 function AlbumContainer() {
@@ -33,13 +34,14 @@ function AlbumContainer() {
 
 
     return (
-        <div>
-            <input type="text"
+        <div className="albumListContainer">
+            <input className='albumInput' type="text"
              placeholder="Add an album"
              value= {name}
              onChange= {(e) => setName(e.target.value)}
              ></input>
             <button
+            className="addAlbumButton"
             type="submit"
             onClick={handleSubmit}
             >+</button>

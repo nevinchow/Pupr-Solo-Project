@@ -8,6 +8,7 @@ import PhotoTile from "../PhotoTile/PhotoTile";
 import { removePhoto } from "../../store/photo";
 import { useHistory } from 'react-router'
 import AlbumContainer from "../AlbumContainer/AlbumContainer";
+import './ProfilePage.css'
 
 function ProfilePage() {
     const dispatch = useDispatch();
@@ -47,9 +48,9 @@ function ProfilePage() {
         )
     }
     return (
-          <div>
+          <div className="pageContainer">
               <AlbumContainer/>
-                <div>
+                <div className="tileContainer">
                     {photos.map((photo) =>
                     <>
                     <PhotoTile
@@ -57,7 +58,7 @@ function ProfilePage() {
                     photo={photo}
                     onClick={(e) => {onClick(e,photo)}}
                     />
-                    <button className="deleteButton" onClick={(e) => {handleDeleteItem(e, photo)}}>Delete</button>
+                    <button className="deleteButton1" onClick={(e) => {handleDeleteItem(e, photo)}}>Delete</button>
                     </>
                     )}
                     {content}

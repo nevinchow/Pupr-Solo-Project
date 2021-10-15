@@ -1,11 +1,11 @@
 import './NavBar.css'
+import { NavLink } from 'react-router-dom'
 
 function NavBar() {
     return (
         <div className='navBar'>
-            <a className='uploadLink' href='/api/photos/upload'>Upload Photo </a>
-            <a className='photoLink' href='/api/photos'> Photos</a>
-            <a className='albumLink' href='/api/albums'>Album </a>
+            <NavLink className="uploadLink" to="/api/photos/upload">Upload Photo</NavLink>
+            <NavLink className="photoLink" to="/api/photos">Photos</NavLink>
         </div>
 
     )

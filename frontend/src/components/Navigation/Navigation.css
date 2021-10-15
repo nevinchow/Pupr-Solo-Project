@@ -1,7 +1,7 @@
 .puprLink {
     position: relative;
     left: 40px;
-    bottom: 76px;
+    bottom: 69px;
     text-decoration: none;
     color: white;
     font-size: 25px;
@@ -10,8 +10,10 @@
 
 .userButton {
     position: relative;
-    left: 1200px;
-    bottom: 110px;
+    left: 1730px;
+    bottom: 75px;
+    height: 40px;
+    width: 40px;
 }
 
 .signup {
@@ -22,4 +24,25 @@
     text-decoration: none;
     color: white;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+}
+
+.infoContainer {
+    background-color: rgba(207, 207, 207, 0.25);
+    position: absolute;
+    left: 1704px;
+    top: 59px;
+    color: white;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    border-radius: .25rem;
+    width: 160px;
+}
+
+.profile-dropdown {
+    margin: 20px;
+    padding: 10px;
+}
+
+.infoList {
+    position: relative;
+    left: 10px;
 }

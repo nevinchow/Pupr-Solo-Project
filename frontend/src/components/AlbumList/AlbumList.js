@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router'
 import { getPhotosByAlbumId } from "../../store/album";
 import { removeAlbum } from "../../store/album";
+import "./AlbumList.css"
 
 
 function AlbumList({album}) {
@@ -27,9 +28,9 @@ function AlbumList({album}) {
 
 
     return (
-        <div>
-             <span onClick={onClick} key={album.id} href={``} >{album.name}</span>
-             <button onClick={(e) => {handleDeleteItem(e, album)}}>Delete</button>
+        <div className="indivdiualAlbumContainer">
+             <span className="album"onClick={onClick} key={album.id} href={``} >{album.name}</span>
+             <button className="deleteAlbumButton" onClick={(e) => {handleDeleteItem(e, album)}}>Delete</button>
         </div>
     )
 }
