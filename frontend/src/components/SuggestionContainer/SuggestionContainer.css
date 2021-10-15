@@ -1,0 +1,41 @@
+.head1 {
+    position: relative;
+    left: 650px;
+    top: 100px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    font-size: 56px;
+    color: white;
+}
+
+.head2 {
+    position: relative;
+    left: 450px;
+    top: 100px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    font-size: 26px;
+    color: white;
+}
+
+.head3 {
+    position: relative;
+    left: 500px;
+    top: 90px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    font-size: 26px;
+    color: white;
+}
+
+.demoButton {
+    position: relative;
+    top:200px;
+    left: 760px;
+    height: 70px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0 20px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+}

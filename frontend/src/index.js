@@ -39,7 +39,9 @@ function Root() {
 
 ReactDOM.render(
   <React.StrictMode>
+    <div className='backgroundImage'>
     <Root />
+      </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

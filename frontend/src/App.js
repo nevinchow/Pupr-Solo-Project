@@ -33,7 +33,7 @@ function App() {
             <ProfilePage />
           </Route>
           <Route exact path="/">
-          <SuggestionContainer />
+            <SuggestionContainer />
           </Route>
         </Switch>
       )}
