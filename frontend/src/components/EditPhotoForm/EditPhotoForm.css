@@ -1,0 +1,54 @@
+.editPhotoFormContainer {
+    border: 1px solid black;
+    height: 180px;
+    width: 300px;
+    position: relative;
+    bottom: 1800px;
+    left: 1550px;
+    background-color: white;
+}
+
+.editURL {
+    display: block;
+    border-radius: .25rem;
+    border: 1px solid #898989;
+    height: 25px;
+    width: 200px;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 16px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    margin-bottom: 12px;
+    position: relative;
+    left: 30px;
+}
+
+.dropdown {
+    display: block;
+    padding-left: 10px;
+    font-size: 16px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    margin-bottom: 12px;
+    position: relative;
+    left: 70px;
+}
+
+.updatePhotoButton {
+    padding-left: 10px;
+    margin-right: 10px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    font-size: 16px;
+    position: relative;
+    left: 30px;
+    top: 30px;
+}
+
+.cancelUpdateButton {
+    padding-left: 10px;
+    margin-left: 10px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    font-size: 16px;
+    position: relative;
+    left: 40px;
+    top: 30px;
+}

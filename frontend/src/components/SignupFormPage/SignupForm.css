@@ -1,0 +1,99 @@
+.signupPage {
+    height: 100vh;
+}
+
+.signupCointainer {
+    border: none;
+    width: 400px;
+    position: relative;
+    left: 700px;
+    height: 400px;
+    top: 200px;
+    border-radius: .25rem;
+    background-color: #fff;
+}
+
+.title {
+    padding: 10px;
+    position: relative;
+    left: 100px;
+    top: 10px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+
+}
+
+.emailField {
+    display: block;
+    border-radius: .25rem;
+    border: 1px solid #898989;
+    height: 40px;
+    width: 360px;
+    margin: 10px;
+    font-size: 20px;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    font-family: Proxima Nova,Helvetica,sans-serif
+}
+
+.usernameField {
+    display: block;
+    border-radius: .25rem;
+    border: 1px solid #898989;
+    height: 40px;
+    width: 360px;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    margin-bottom: 12px;
+}
+
+.passwordField {
+    display: block;
+    border-radius: .25rem;
+    border: 1px solid #898989;
+    height: 40px;
+    width: 360px;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    margin-bottom: 12px;
+}
+
+.confirmField {
+    display: block;
+    border-radius: .25rem;
+    border: 1px solid #898989;
+    height: 50px;
+    width: 360px;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    margin-bottom: 12px;
+}
+
+.signupButton {
+    width: 304px;
+    height: 40px;
+    position: relative;
+    left: 50px;
+    background-color: #128fdc;
+    border: none;
+    color: white;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    border-radius: .25rem;
+    margin-top: 15px;
+}
+
+.background {
+    background-color: transparent;
+    height: 110vh;
+
+}
+.errors {
+    display: none;
+}

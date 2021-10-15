@@ -5,13 +5,10 @@ function PhotoTile({photo, onClick}) {
     return (
         <div className="photoTileContainer">
             <div className="photo-tile">
-                <a key={photo.id} href={`http://localhost:3000/api/photos/${photo.id}`}>
                             <img className="photo" key={photo.id} src={`${photo.imageUrl}` }/>
-                            </a>
-                            <button className="editButton" onClick={onClick}>Edit</button>
-                           
-            </div>
 
+                            <button className="editButton" onClick={onClick}>Edit</button>
+            </div>
         </div>
     )
 }

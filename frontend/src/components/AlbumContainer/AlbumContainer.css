@@ -1,0 +1,32 @@
+.albumListContainer {
+    display: block;
+    background-color: white;
+    width: 12vw;
+    height: 100vh;
+    position: relative;
+    left: 10px;
+}
+
+.albumInput {
+    display: inline-block;
+    border-radius: .25rem;
+    border: 1px solid #898989;
+    height: 40px;
+    width: 160px;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    margin-bottom: 12px;
+}
+
+.addAlbumButton {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    right: 3px;
+}
+
+.albums {
+    padding-bottom: 20px;
+}

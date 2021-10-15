@@ -1,9 +1,19 @@
-.deleteButton {
+.deleteButton1 {
     height: 50px;
     position: relative;
-    top: 75px;
-    right: 49px;
+    bottom: 985px;
+    left: 243px;
     width: 52px;
     text-align: center;
 
+}
+
+.tileContainer {
+    max-width: 70%;
+    max-height: 100vh
+}
+
+.pageContainer {
+    max-height: 100vh;
+    overflow-y: auto;
 }

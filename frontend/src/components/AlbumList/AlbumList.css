@@ -1,0 +1,17 @@
+.album {
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    font-size: 20px;
+    padding-bottom: 50px;
+}
+
+.deleteAlbumButton {
+    height: 30px;
+    position: absolute;
+    left: 165px;
+}
+
+.indivdiualAlbumContainer {
+    padding-left: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}

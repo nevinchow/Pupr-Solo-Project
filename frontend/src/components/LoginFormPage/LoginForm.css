@@ -1,0 +1,68 @@
+
+.loginButton {
+    position: relative;
+    bottom: 80px;
+    left: 1700px;
+    padding: 0 20px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 3px;
+    border:none;
+    font-size: 16px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    background-color: white;
+    height: 30px;
+}
+
+.loginTitle {
+    position: relative;
+    left: 120px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.container {
+    height: 280px;
+    width: 400px;
+    border-radius: .25rem;
+}
+
+.loginUsername {
+    display: block;
+    border-radius: .25rem;
+    border: 1px solid #898989;
+    height: 40px;
+    width: 360px;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    margin-bottom: 12px;
+}
+
+.loginPassword {
+    display: block;
+    border-radius: .25rem;
+    border: 1px solid #898989;
+    height: 40px;
+    width: 360px;
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    margin-bottom: 12px;
+}
+
+.loginLoginButton {
+    width: 304px;
+    height: 40px;
+    position: relative;
+    left: 50px;
+    background-color: #128fdc;
+    border: none;
+    color: white;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    border-radius: .25rem;
+    margin-top: 15px;
+}

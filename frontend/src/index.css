@@ -1,1 +1,4 @@
-/* TODO Add site wide styles */
+.backgroundImage {
+    background-image: url('/src/images/769143.jpg');
+    background-repeat: no-repeat;
+}
