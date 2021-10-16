@@ -74,6 +74,7 @@ function SignupFormPage() {
       <button className="signupButton" type="submit">Sign Up</button>
       </div>
     </form>
+    
     </div>
     </>
   );

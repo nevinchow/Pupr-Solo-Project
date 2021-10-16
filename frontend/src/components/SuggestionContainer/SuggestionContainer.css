@@ -39,3 +39,54 @@
     padding: 0 20px;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
 }
+
+.footerContainer {
+    background-color: red;
+}
+
+.background {
+    background-color: transparent;
+    height: 110vh;
+
+}
+
+.footer {
+    background-color: white;
+    position: relative;
+    top: 1090px;
+    height: 80px;
+}
+
+.githubLogo {
+    position: relative;
+    left: 1000px;
+}
+
+.linkedinLogo {
+    position: relative;
+    left: 1200px;
+}
+
+.gitLink {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    left: 1000px;
+    bottom: 10px;
+
+}
+
+.linkedLink {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    left: 1200px;
+    bottom: 10px;
+}
+
+.footerTitle {
+    position: relative;
+    top: 60px;
+}

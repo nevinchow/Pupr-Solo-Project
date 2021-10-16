@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar/NavBar";
 import UploadPage from "./components/UploadPage/UploadPage";
 import SuggestionContainer from"./components/SuggestionContainer/SuggestionContainer"
 import ProfilePage from "./components/ProfilePage/ProfilePage";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {

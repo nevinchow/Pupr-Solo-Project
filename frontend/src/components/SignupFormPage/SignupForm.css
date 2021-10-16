@@ -7,7 +7,7 @@
     width: 400px;
     position: relative;
     left: 700px;
-    height: 400px;
+    height: 550px;
     top: 200px;
     border-radius: .25rem;
     background-color: #fff;
@@ -17,7 +17,7 @@
     padding: 10px;
     position: relative;
     left: 100px;
-    top: 10px;
+    top: 50px;
     font-family: Proxima Nova,Helvetica,sans-serif;
     font-size: 25px;
     font-weight: normal;
@@ -29,6 +29,8 @@
     border-radius: .25rem;
     border: 1px solid #898989;
     height: 40px;
+    position: relative;
+    top: 40px;
     width: 360px;
     margin: 10px;
     font-size: 20px;
@@ -42,6 +44,8 @@
     border-radius: .25rem;
     border: 1px solid #898989;
     height: 40px;
+    position: relative;
+    top: 40px;
     width: 360px;
     margin: 10px;
     padding-left: 10px;
@@ -55,6 +59,8 @@
     border-radius: .25rem;
     border: 1px solid #898989;
     height: 40px;
+    position: relative;
+    top: 40px;
     width: 360px;
     margin: 10px;
     padding-left: 10px;
@@ -69,6 +75,8 @@
     border: 1px solid #898989;
     height: 50px;
     width: 360px;
+    position: relative;
+    top: 40px;
     margin: 10px;
     padding-left: 10px;
     font-size: 20px;
@@ -83,17 +91,18 @@
     left: 50px;
     background-color: #128fdc;
     border: none;
+    position: relative;
+    top: 40px;
     color: white;
     font-family: Proxima Nova,Helvetica,sans-serif;
     border-radius: .25rem;
     margin-top: 15px;
 }
 
-.background {
-    background-color: transparent;
-    height: 110vh;
-
-}
 .errors {
-    display: none;
+    position: relative;
+    top: 50px;
+    width: 300px;
+    left: 30px;
+
 }

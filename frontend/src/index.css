@@ -1,4 +1,5 @@
 .backgroundImage {
     background-image: url('/src/images/769143.jpg');
-    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
 }

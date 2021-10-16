@@ -1,5 +1,7 @@
 import './NavBar.css'
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router';
 
 function NavBar() {
     return (

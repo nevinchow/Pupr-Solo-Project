@@ -10,7 +10,10 @@
 
 .tileContainer {
     max-width: 70%;
-    max-height: 100vh
+    max-height: 100vh;
+    position: relative;
+    bottom: 400px;
+    left: 50px;
 }
 
 .pageContainer {
