@@ -33,7 +33,7 @@ export const getAlbums = () => async (dispatch) => {
 }
 
 export const createAlbum = (payload) => async (dispatch) => {
-    const response = await csrfFetch('http://localhost:3000/api/albums', {
+    const response = await csrfFetch('/api/albums', {
     method: 'POST',
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(payload),

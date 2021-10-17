@@ -50,7 +50,7 @@ export const getPhotosByAlbumId = (albumId) => async (dispatch) => {
 
 
 export const uploadPhotos = (payload) => async (dispatch) => {
-    const response = await csrfFetch('http://localhost:3000/api/photos', {
+    const response = await csrfFetch('/api/photos', {
     method: 'POST',
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(payload),
