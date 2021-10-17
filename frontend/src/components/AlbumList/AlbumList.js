@@ -21,7 +21,6 @@ function AlbumList({album}) {
 
     const handleDeleteItem = async (e, album) => {
         await dispatch(removeAlbum(album.id))
-        console.log(album)
         history.push('/api/photos')
     }
 
