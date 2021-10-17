@@ -6,6 +6,7 @@ import * as photoActions from "../../store/photo"
 import { useHistory } from 'react-router'
 import { uploadPhotos } from '../../store/photo'
 import { useSelector } from 'react-redux'
+import { set } from 'js-cookie'
 
 
 function UploadPage() {
@@ -14,6 +15,7 @@ function UploadPage() {
     const [name, setName] = useState('')
     const history = useHistory();
     const user = useSelector(state => state.session.user)
+    const [errors, setErrors] = useState([]);
 
 
 
@@ -24,10 +26,12 @@ function UploadPage() {
             imageUrl,
             userId: user.id
         }
-        let newImage = await dispatch(uploadPhotos(payload))
-        if (newImage) {
+        setErrors([])
+        await dispatch(uploadPhotos(payload)).catch(async (res) => {
+            const data = await res.json();
+            if (data && data.errors) setErrors(data.errors);
+        })
             history.push(`/api/photos/`)
-        }
     }
 
     return (
@@ -36,6 +40,9 @@ function UploadPage() {
             <h2 className='header1'>
                 Welcome to Pupr!
             </h2>
+            <ul className= 'errors'>
+        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      </ul>
             <h3 className='header2'>
                 Please provide a link to photo to upload:
             </h3>
