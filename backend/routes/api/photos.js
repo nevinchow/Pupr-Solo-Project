@@ -5,10 +5,20 @@ const router = express.Router();
 const asyncHandler = require('express-async-handler')
 const PhotoRepository = require('../../db/photo-repository')
 const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth');
-
+const { handleValidationErrors } = require('../../utils/validation');
+const { check } = require('express-validator');
 
 const { Photo, Photo_Album, Album } = require('../../db/models')
 const {User} = require('../../db/models')
+
+
+const validateUpload = [
+    check('imageUrl')
+        .exists({checkFalsy: true})
+        .notEmpty()
+        .withMessage('Please provide a valid link'),
+    handleValidationErrors
+]
 
 router.get('/', requireAuth, asyncHandler(async (req, res) => {
     const photos = await Photo.findAll({
@@ -16,6 +26,7 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
             userId: req.user.id
         }
     })
+
     res.json(photos);
 }))
 
@@ -91,7 +102,7 @@ router.delete('/:id', asyncHandler(async (req, res) => {
 
 
 
-router.post('/', asyncHandler(async (req, res) => {
+router.post('/', validateUpload, asyncHandler(async (req, res) => {
     const {name, imageUrl, userId} = req.body
     const photo = await Photo.create({
         name,
