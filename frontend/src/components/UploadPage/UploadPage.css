@@ -7,13 +7,15 @@
     width: 30vw;
     height: 35vh;
     position: relative;
-    left: 650px;
-    top: 150px;
+    left: 870px;
+    top: 300px;
+    border-radius: 25px;
 }
 
 .header1, .header2{
     text-align: center;
     padding: 15px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
 }
 
 .imageUrlInput {
@@ -28,14 +30,14 @@
     margin-bottom: 12px;
     font-family: Proxima Nova,Helvetica,sans-serif;
     position: relative;
-    left: 90px;
+    left: 170px;
+    top: 30px;
 }
 
 .uploadButton {
     width: 304px;
     height: 40px;
     position: relative;
-    left: 50px;
     background-color: #128fdc;
     border: none;
     color: white;
@@ -43,6 +45,7 @@
     border-radius: .25rem;
     margin-top: 15px;
     position: relative;
-    left: 130px;
+    left: 214px;
+    top: 30px;
 
 }

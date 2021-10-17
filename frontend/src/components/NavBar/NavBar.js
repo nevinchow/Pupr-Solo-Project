@@ -2,10 +2,12 @@ import './NavBar.css'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
+import logo from '../../images/768px-Flickr_dots.svg.png'
 
 function NavBar() {
     return (
         <div className='navBar'>
+            <img class="dotsLogo" src={logo} height={30} width={30}/>
             <NavLink className="uploadLink" to="/api/photos/upload">Upload Photo</NavLink>
             <NavLink className="photoLink" to="/api/photos">Photos</NavLink>
         </div>

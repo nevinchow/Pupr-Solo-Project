@@ -14,7 +14,8 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
     const photos = await Photo.findAll({
         where: {
             userId: req.user.id
-        }
+        },
+        order: [['id', 'DESC']]
     })
     res.json(photos);
 }))
@@ -24,7 +25,9 @@ router.get('/:id', asyncHandler(async (req, res) => {
     const photos = await Photo.findAll({
         where: {
             userId: id
-        }
+        },
+        order: [['id', 'ASC']]
+
     })
     res.json(photos);
 }))

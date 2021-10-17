@@ -21,7 +21,17 @@ module.exports = {
      {name: "", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCC4squwzXz2nJjoLg54HZI__bsl39JUc6NQ&usqp=CAU", userId: 1, createdAt: new Date(), updatedAt: new Date()},
      {name: "", imageUrl: "https://static.thebark.com/sites/default/files/content/article/thumb/dogzoomiesericsonstroem.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()},
      {name: "", imageUrl: "https://i.pinimg.com/originals/1f/42/29/1f4229a066cd0b9438a71f9c228cf309.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()},
-     {name: "", imageUrl: "https://i.ytimg.com/vi/kZw-jgCRPeE/maxresdefault.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()}
+     {name: "", imageUrl: "https://i.ytimg.com/vi/kZw-jgCRPeE/maxresdefault.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()},
+     {name: "", imageUrl: "https://static.wikia.nocookie.net/scoobydoo/images/5/53/Scooby-Doo.png", userId: 1, createdAt: new Date(), updatedAt: new Date()},
+     {name: "", imageUrl: "https://decider.com/wp-content/uploads/2020/03/appa-and-momo-last-airbender.jpg?quality=80&strip=all", userId: 1, createdAt: new Date(), updatedAt: new Date()},
+     {name: "", imageUrl: "https://cdn.theatlantic.com/thumbor/W544GIT4l3z8SG-FMUoaKpFLaxE=/0x131:2555x1568/1600x900/media/img/mt/2017/06/shutterstock_319985324/original.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()},
+     {name: "", imageUrl: "https://www.zenrooms.com/blog/wp-content/uploads/2020/05/funny-cats-2-1280x720.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()},
+     {name: "", imageUrl: "https://www.thehealthytails.com/uploads/healthytails/images/27c3475ecd94e215e1edd9d1babb95dd-608093_m.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()},
+     {name: "", imageUrl: "https://www.rd.com/wp-content/uploads/2017/10/These-Funny-Dog-Videos-Are-the-Break-You-Need-Right-Now_493370860-Jenn_C_FT.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()},
+     {name: "", imageUrl: "https://4.bp.blogspot.com/-4bye8tSACZY/TfL-qzJQShI/AAAAAAAAAuA/LE-9ig5Vz-M/s640/funny+and+cute+dogs+and+puppies+2.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()},
+     {name: "", imageUrl: "https://www.rd.com/wp-content/uploads/2020/11/GettyImages-889552354-e1606774439626.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()},
+     {name: "", imageUrl: "https://dogtime.com/assets/uploads/2012/05/dog-bathing-e1571421548676.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()},
+     {name: "", imageUrl: "https://www.drmartybecker.com/wp-content/uploads/2018/05/bigstock-178717285.jpg", userId: 1, createdAt: new Date(), updatedAt: new Date()}
     ], {});
   },
 

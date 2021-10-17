@@ -1,7 +1,7 @@
 .head1 {
     position: relative;
-    left: 650px;
-    top: 150px;
+    left: 1000px;
+    top: 400px;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     font-size: 56px;
     color: white;
@@ -9,8 +9,8 @@
 
 .head2 {
     position: relative;
-    left: 450px;
-    top: 150px;
+    left: 820px;
+    top: 450px;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     font-size: 26px;
     color: white;
@@ -18,8 +18,8 @@
 
 .head3 {
     position: relative;
-    left: 500px;
-    top: 140px;
+    left: 890px;
+    top: 440px;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     font-size: 26px;
     color: white;
@@ -27,8 +27,8 @@
 
 .demoButton {
     position: relative;
-    top:250px;
-    left: 760px;
+    top:550px;
+    left: 1100px;
     height: 70px;
     text-align: center;
     font-weight: 600;
@@ -53,8 +53,8 @@
 .footer {
     background-color: white;
     position: relative;
-    top: 1090px;
-    height: 80px;
+    top: 1130px;
+    height: 60px;
 }
 
 .githubLogo {
@@ -74,6 +74,7 @@
     position: relative;
     left: 1000px;
     bottom: 10px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
 
 }
 
@@ -84,9 +85,11 @@
     position: relative;
     left: 1200px;
     bottom: 10px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
 }
 
 .footerTitle {
     position: relative;
     top: 60px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
 }
