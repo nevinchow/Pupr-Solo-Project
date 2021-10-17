@@ -15,6 +15,7 @@ function AlbumContainer() {
     const user = useSelector(state => state.session.user)
     const albums = useSelector(state => Object.values(state.album))
     const [name, setName] = useState("")
+    const [errors, setErrors] = useState([]);
 
     useEffect(() => {
         dispatch(getAlbums())
@@ -26,7 +27,11 @@ function AlbumContainer() {
             name,
             userId: user.id
         }
-        let newAlbum = await dispatch(createAlbum(payload))
+        setErrors([]);
+        let newAlbum = await dispatch(createAlbum(payload)).catch(async (res) => {
+            const data = await res.json();
+            if (data && data.errors) setErrors(data.errors)
+        })
         if (newAlbum) {
             history.push(`/api/photos/`)
         }
@@ -45,6 +50,9 @@ function AlbumContainer() {
             type="submit"
             onClick={handleSubmit}
             >+</button>
+             <ul className= 'uploadAlbumError'>
+        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      </ul>
             {albums.map((album) => <AlbumList key={album.id} album={album} />)}
         </div>
     )

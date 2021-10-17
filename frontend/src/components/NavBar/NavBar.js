@@ -5,14 +5,24 @@ import { Redirect } from 'react-router';
 import logo from '../../images/768px-Flickr_dots.svg.png'
 
 function NavBar() {
-    return (
-        <div className='navBar'>
-            <img class="dotsLogo" src={logo} height={30} width={30}/>
-            <NavLink className="uploadLink" to="/api/photos/upload">Upload Photo</NavLink>
-            <NavLink className="photoLink" to="/api/photos">Photos</NavLink>
-        </div>
 
-    )
+    const sessionUser = useSelector((state) => state.session.user);
+    if (sessionUser) {
+        return (
+            <div className='navBar'>
+                <img class="dotsLogo" src={logo} height={30} width={30}/>
+                <NavLink className="uploadLink" to="/api/photos/upload">Upload Photo</NavLink>
+                <NavLink className="photoLink" to="/api/photos">Photos</NavLink>
+            </div>
+
+        )
+    } else {
+        return (
+        <div className='navBar'>
+        <img class="dotsLogo" src={logo} height={30} width={30}/>
+        </div>
+        )
+    }
 }
 
 export default NavBar

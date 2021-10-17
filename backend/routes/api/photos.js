@@ -27,7 +27,6 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
         },
         order: [['id', 'DESC']]
     })
-
     res.json(photos);
 }))
 

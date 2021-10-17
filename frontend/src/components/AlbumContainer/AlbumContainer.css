@@ -8,7 +8,7 @@
 }
 
 .albumInput {
-    display: inline-block;
+    display: inline-flex;
     border-radius: .25rem;
     border: 1px solid #898989;
     height: 40px;
@@ -29,4 +29,12 @@
 
 .albums {
     padding-bottom: 20px;
+
+}
+
+.uploadAlbumError {
+    position: absolute;
+    top: 50px;
+    color: red;
+    font-family: Proxima Nova,Helvetica,sans-serif;
 }

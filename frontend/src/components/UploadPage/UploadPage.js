@@ -27,11 +27,13 @@ function UploadPage() {
             userId: user.id
         }
         setErrors([])
-        await dispatch(uploadPhotos(payload)).catch(async (res) => {
+        let newImage = await dispatch(uploadPhotos(payload)).catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);
         })
-            history.push(`/api/photos/`)
+            if (newImage) {
+                history.push(`/api/photos/`)
+            }
     }
 
     return (
@@ -40,7 +42,7 @@ function UploadPage() {
             <h2 className='header1'>
                 Welcome to Pupr!
             </h2>
-            <ul className= 'errors'>
+            <ul className= 'uploadError'>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
             <h3 className='header2'>

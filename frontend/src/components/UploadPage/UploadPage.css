@@ -31,7 +31,7 @@
     font-family: Proxima Nova,Helvetica,sans-serif;
     position: relative;
     left: 170px;
-    top: 30px;
+    top: 80px;
 }
 
 .uploadButton {
@@ -46,6 +46,18 @@
     margin-top: 15px;
     position: relative;
     left: 214px;
-    top: 30px;
+    top: 80px;
 
+}
+
+.uploadError {
+    position: absolute;
+    top: 130px;
+    left: 240px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    color: red;
+}
+
+.header2 {
+    position: relative;
 }

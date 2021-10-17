@@ -2,16 +2,22 @@
     font-family: Proxima Nova,Helvetica,sans-serif;
     font-size: 20px;
     padding-bottom: 50px;
+    position: relative;
+    top: 26px;
 }
 
 .deleteAlbumButton {
     height: 30px;
     position: absolute;
-    left: 165px;
+    display: block;
+    left: 225px;
+    text-align: center;
+    align-content: center;
+
 }
 
 .indivdiualAlbumContainer {
     padding-left: 10px;
-    padding-bottom: 15px;
-    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
