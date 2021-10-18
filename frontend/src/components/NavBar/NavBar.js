@@ -1,7 +1,6 @@
 import './NavBar.css'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import { Redirect } from 'react-router';
 import logo from '../../images/768px-Flickr_dots.svg.png'
 import { useDispatch } from 'react-redux';
 import { getPhotos } from '../../store/photo';
@@ -19,16 +18,16 @@ function NavBar() {
     if (sessionUser) {
         return (
             <div className='navBar'>
-                <img class="dotsLogo" src={logo} height={30} width={30}/>
-                <NavLink className="uploadLink" to="/api/photos/upload">Upload Photo</NavLink>
-                <NavLink onClick={onClick} className="photoLink" to="/api/photos">Photos</NavLink>
+                <img className="dotsLogo" src={logo} height={30} width={30} alt=""/>
+                <NavLink className="uploadLink" to="/api/photos/upload" alt="">Upload Photo</NavLink>
+                <NavLink onClick={onClick} className="photoLink" to="/api/photos" alt="">Photos</NavLink>
             </div>
 
         )
     } else {
         return (
         <div className='navBar'>
-        <img class="dotsLogo" src={logo} height={30} width={30}/>
+        <img className="dotsLogo" src={logo} height={30} width={30} alt=""/>
         </div>
         )
     }

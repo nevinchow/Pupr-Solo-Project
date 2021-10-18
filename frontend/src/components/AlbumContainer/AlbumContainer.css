@@ -1,10 +1,11 @@
 .albumListContainer {
     display: block;
-    background-color: white;
+    background-color: #f3f5f6;
     width: 12vw;
     height: 100vh;
     position: relative;
     left: 10px;
+    border-radius: 2px;
 }
 
 .albumInput {

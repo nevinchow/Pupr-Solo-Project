@@ -2,11 +2,13 @@
     height: 150px;
     width: 300px;
     display: flex;
+    border-radius: 2px;
 }
 
 .photo-tile {
     display: inline-flex;
     padding: 7px;
+
 }
 
 
@@ -24,9 +26,10 @@
 .photoTileContainer {
     display: inline-flex;
     border: 1px solid white;
-    background-color: white;
+    background-color: #f3f5f6;
     max-width: 60%;
     position: relative;
     bottom: 940px;
     left: 300px;
+    border-radius: 2px;
 }

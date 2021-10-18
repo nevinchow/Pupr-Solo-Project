@@ -17,7 +17,7 @@
     padding: 10px;
     position: relative;
     left: 100px;
-    top: 50px;
+    bottom: 0px;
     font-family: Proxima Nova,Helvetica,sans-serif;
     font-size: 25px;
     font-weight: normal;
@@ -30,7 +30,7 @@
     border: 1px solid #898989;
     height: 40px;
     position: relative;
-    top: 40px;
+    top: 90px;
     width: 360px;
     margin: 10px;
     font-size: 20px;
@@ -45,7 +45,7 @@
     border: 1px solid #898989;
     height: 40px;
     position: relative;
-    top: 40px;
+    top: 90px;
     width: 360px;
     margin: 10px;
     padding-left: 10px;
@@ -60,7 +60,7 @@
     border: 1px solid #898989;
     height: 40px;
     position: relative;
-    top: 40px;
+    top: 90px;
     width: 360px;
     margin: 10px;
     padding-left: 10px;
@@ -76,7 +76,7 @@
     height: 50px;
     width: 360px;
     position: relative;
-    top: 40px;
+    top: 90px;
     margin: 10px;
     padding-left: 10px;
     font-size: 20px;
@@ -92,17 +92,18 @@
     background-color: #128fdc;
     border: none;
     position: relative;
-    top: 40px;
+    top: 90px;
     color: white;
     font-family: Proxima Nova,Helvetica,sans-serif;
     border-radius: .25rem;
     margin-top: 15px;
 }
 
-.errors {
-    position: relative;
+.signupErrors {
+    position: absolute;
     top: 50px;
     width: 300px;
     left: 30px;
-
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    color: red;
 }

@@ -3,13 +3,12 @@ const csrf = require('csurf')
 const express = require('express')
 const router = express.Router();
 const asyncHandler = require('express-async-handler')
-const PhotoRepository = require('../../db/photo-repository')
-const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth');
+
+const {requireAuth } = require('../../utils/auth');
 const { handleValidationErrors } = require('../../utils/validation');
 const { check } = require('express-validator');
 
 const { Photo, Photo_Album, Album } = require('../../db/models')
-const {User} = require('../../db/models')
 
 
 const validateUpload = [
@@ -91,15 +90,6 @@ router.delete('/:id', asyncHandler(async (req, res) => {
     photo.destroy();
     return res.json({id})
 }))
-
-
-// router.get('/:id', asyncHandler(async (req, res) => {
-
-//     const photos = await Photo.findByPk(req.params.id)
-
-//     return res.json(photos);
-// }))
-
 
 
 router.post('/', validateUpload, asyncHandler(async (req, res) => {

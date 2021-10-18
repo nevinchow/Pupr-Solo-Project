@@ -40,7 +40,7 @@ function ProfileButton({ user }) {
         <i className="fas fa-user-circle" />
       </button>
       {showMenu && (
-        <div class="infoContainer">
+        <div className="infoContainer">
         <ul className="profile-dropdown">
           <li className="infoList">{user.username}</li>
           <li className="infoList">{user.email}</li>

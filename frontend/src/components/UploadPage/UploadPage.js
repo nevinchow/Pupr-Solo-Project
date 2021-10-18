@@ -2,17 +2,14 @@ import './UploadPage.css'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import React from 'react'
-import * as photoActions from "../../store/photo"
 import { useHistory } from 'react-router'
 import { uploadPhotos } from '../../store/photo'
 import { useSelector } from 'react-redux'
-import { set } from 'js-cookie'
 
 
 function UploadPage() {
     const dispatch = useDispatch();
     const [imageUrl, setImageUrl] = useState("")
-    const [name, setName] = useState('')
     const history = useHistory();
     const user = useSelector(state => state.session.user)
     const [errors, setErrors] = useState([]);
@@ -22,7 +19,6 @@ function UploadPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = {
-            name,
             imageUrl,
             userId: user.id
         }

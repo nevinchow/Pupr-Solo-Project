@@ -23,16 +23,18 @@
 }
 
 .container {
-    height: 280px;
+    height: 350px;
     width: 400px;
     border-radius: .25rem;
 }
 
 .loginUsername {
-    display: block;
+    display: flex;
     border-radius: .25rem;
     border: 1px solid #898989;
     height: 40px;
+    position: relative;
+    top: 50px;
     width: 360px;
     margin: 10px;
     padding-left: 10px;
@@ -47,6 +49,8 @@
     border: 1px solid #898989;
     height: 40px;
     width: 360px;
+    position: relative;
+    top: 50px;
     margin: 10px;
     padding-left: 10px;
     font-size: 20px;
@@ -57,6 +61,7 @@
 .loginLoginButton {
     width: 304px;
     height: 40px;
+    top: 90px;
     position: relative;
     left: 50px;
     background-color: #128fdc;
@@ -65,4 +70,13 @@
     font-family: Proxima Nova,Helvetica,sans-serif;
     border-radius: .25rem;
     margin-top: 15px;
+}
+
+.loginErrors {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    color: red;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+
 }

@@ -1,15 +1,11 @@
-import React, { useReducer, useState } from 'react';
+import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import LoginForm from './LoginForm';
-import * as sessionActions from '../../store/session'
-import { useDispatch } from "react-redux";
 import './LoginForm.css'
 
 
 function LoginFormModal() {
-  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
-  const [errors, setErrors] = useState([]);
 
   return (
     <>
