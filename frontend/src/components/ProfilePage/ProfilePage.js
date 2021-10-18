@@ -36,7 +36,7 @@ function ProfilePage() {
         setShowEditPhotoForm(false);
         dispatch(getPhotos(user.id))
 
-    }, [dispatch, user.id])
+    }, [dispatch])
 
 
     let content = null;
