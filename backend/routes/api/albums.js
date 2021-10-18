@@ -2,8 +2,7 @@ const csrf = require('csurf')
 const express = require('express')
 const router = express.Router();
 const asyncHandler = require('express-async-handler')
-const PhotoRepository = require('../../db/photo-repository')
-const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth');
+const { requireAuth } = require('../../utils/auth');
 const { handleValidationErrors } = require('../../utils/validation');
 const { check } = require('express-validator');
 
