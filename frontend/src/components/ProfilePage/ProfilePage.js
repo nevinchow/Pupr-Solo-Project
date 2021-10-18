@@ -34,12 +34,8 @@ function ProfilePage() {
 
     useEffect(() => {
         setShowEditPhotoForm(false);
-        if (user) {
-            dispatch(getPhotos(user.id))
-        } else {
-            history.push('/')
-        }
-    }, [dispatch, user.id])
+        dispatch(getPhotos(user.id))
+    }, [dispatch])
 
 
     let content = null;
