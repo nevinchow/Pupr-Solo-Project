@@ -6,7 +6,7 @@ import { useState } from "react";
 import EditPhotoForm from "../EditPhotoForm/EditPhotoForm";
 import PhotoTile from "../PhotoTile/PhotoTile";
 import { removePhoto } from "../../store/photo";
-import { useHistory } from 'react-router'
+import { Redirect, useHistory } from 'react-router'
 import AlbumContainer from "../AlbumContainer/AlbumContainer";
 import './ProfilePage.css'
 
@@ -34,9 +34,12 @@ function ProfilePage() {
 
     useEffect(() => {
         setShowEditPhotoForm(false);
-        dispatch(getPhotos(user.id))
-
-    }, [dispatch])
+        if (user) {
+            dispatch(getPhotos(user.id))
+        } else {
+            history.push('/')
+        }
+    }, [dispatch, user.id])
 
 
     let content = null;
