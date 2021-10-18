@@ -10,36 +10,34 @@ import SuggestionContainer from"./components/SuggestionContainer/SuggestionConta
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 
 
-
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
-
-  return (
-    <>
-      <NavBar />
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route path="/api/photos/upload">
-            <UploadPage />
-          </Route>
-          <Route path="/api/photos">
-            <ProfilePage />
-          </Route>
-          <Route exact path="/">
-            <SuggestionContainer />
-          </Route>
-        </Switch>
-      )}
-    </>
-  );
+    return (
+      <>
+        <NavBar />
+        <Navigation isLoaded={isLoaded} />
+        {isLoaded && (
+          <Switch>
+            <Route path="/signup">
+              <SignupFormPage />
+            </Route>
+            <Route path="/api/photos/upload">
+              <UploadPage />
+            </Route>
+            <Route path="/api/photos">
+              <ProfilePage />
+            </Route>
+            <Route exact path="/">
+              <SuggestionContainer />
+            </Route>
+          </Switch>
+        )}
+      </>
+    );
 }
 
 export default App;
