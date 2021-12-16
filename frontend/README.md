@@ -1,76 +1,36 @@
+# Pupr
 
-# Create React App Template
+Pupr is a web application for uploading and storing photos. It was
+ inspired by Flickr and built using React.js and Express.
 
-A no-frills template from which to create React + Redux applications with
-[Create React App](https://github.com/facebook/create-react-app).
+Sign up and Upload at [pupr-aa-project.herokuapp.com/](https://pupr-aa-project.herokuapp.com/)
 
-```sh
-npx create-react-app my-app --template @appacademy/react-redux-v17 --use-npm
-```
+### Landing Page:
+![](https://i.ibb.co/TgCzgyr/7f7ea4a05b7a95092be501b9707623af.jpg)
 
-## Available Scripts
 
-In the project directory, you can run:
+### Home View:
 
-### `npm start`
+![](https://i.ibb.co/DzDhnny/a3318844eccf2d9cb0f535c323e4ba61.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Photo/Album View:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![](https://i.ibb.co/q0vs7y9/0dc44c432ce01ebae0eaab5eda56e2aa.jpg)
 
-### `npm test`
+### Technical Details:
+* Pupr allows for people to create accounts that they can use to upload photos of their pets and animals. A user is not required to specify an album when uploading a photo. If the user decides to afterwards, however, they are also able to. After an image URL is provided, the page should refresh with the photo now rendered on the page. Upon clicking on an album, the user can expect the photos that are not in that album to be filtered.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Features
+* Sign up/in with email and username
+* Upload photos
+* Edit photos
+* Delete Photos
+* Create albums
+* Delete albums
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### To-Do:
+* [ ] Comments
+* [ ] Search
+* [ ] Photo browsing
+* [ ] Tags
