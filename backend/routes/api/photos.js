@@ -20,11 +20,7 @@ const validateUpload = [
 ]
 
 router.get('/', requireAuth, asyncHandler(async (req, res) => {
-    const photos = await Photo.findAll({
-        where: {
-            userId: req.user.id
-        },
-    })
+    const photos = await Photo.findAll()
     res.json(photos);
 }))
 

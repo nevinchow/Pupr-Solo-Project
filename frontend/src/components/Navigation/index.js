@@ -23,10 +23,11 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
+    <>
         <NavLink className="puprLink" exact to="/">Pupr</NavLink>
         {isLoaded && sessionLinks}
-    </ul>
+    </>
+
   );
 }
 

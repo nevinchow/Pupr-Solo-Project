@@ -16,7 +16,9 @@ function ProfilePage() {
 
     const photos = useSelector(state => (Object.values(state.photo)))
     const user = useSelector(state => state.session.user)
-
+    const userId = user?.id
+    const filteredPhotos = photos.filter((photo) => photo.userId === userId)
+    console.log(filteredPhotos)
     const [showEditPhotoForm, setShowEditPhotoForm] = useState(false)
     const [photoId, setPhotoId ] = useState("")
 
@@ -50,17 +52,19 @@ function ProfilePage() {
           <div className="pageContainer">
               <AlbumContainer/>
                 <div className="tileContainer">
-                    {photos.map((photo) =>
+                    {filteredPhotos.map((photo) =>
                     <>
+
                     <PhotoTile
                     key={photo.id}
                     photo={photo}
-                    onClick={(e) => {onClick(e,photo)}}
-                    />
+                    onClick={(e) => {onClick(e,photo)}}/>
                     <button className="deleteButton1" onClick={(e) => {handleDeleteItem(e, photo)}}>Delete</button>
-                    </>
+                    </> 
                     )}
+
                     {content}
+
                 </div>
 
           </div>

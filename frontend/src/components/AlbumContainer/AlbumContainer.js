@@ -13,7 +13,9 @@ function AlbumContainer() {
     const dispatch = useDispatch();
     const history = useHistory();
     const user = useSelector(state => state.session.user)
+    const userId = user?.id
     const albums = useSelector(state => Object.values(state.album))
+    const filteredAlbums = albums.filter((album) => album.userId === userId)
     const [name, setName] = useState("")
     const [errors, setErrors] = useState([]);
 
@@ -53,7 +55,7 @@ function AlbumContainer() {
              <ul className= 'uploadAlbumError'>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
-            {albums.map((album) => <AlbumList key={album.id} album={album} />)}
+            {filteredAlbums.map((album) => <AlbumList key={album.id} album={album} />)}
         </div>
     )
 }

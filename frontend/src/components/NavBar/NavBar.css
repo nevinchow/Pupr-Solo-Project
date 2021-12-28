@@ -1,12 +1,13 @@
 .navBar {
     background-color: rgba(0,0,0,.25);
     height: 70px;
-    width: 100%;
+    width: 100vw;
     margin: none;
     padding: none;
     position: relative;
     bottom: 8px;
     right: 8px;
+    z-index: 1000
 }
 
 .uploadLink {

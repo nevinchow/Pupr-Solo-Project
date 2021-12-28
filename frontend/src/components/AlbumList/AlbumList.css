@@ -8,16 +8,15 @@
 
 .deleteAlbumButton {
     height: 30px;
-    position: absolute;
-    display: block;
-    left: 225px;
-    text-align: center;
-    align-content: center;
+
 
 }
 
 .indivdiualAlbumContainer {
     padding-left: 10px;
     padding-bottom: 20px;
-    padding-top: 20px;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
 }

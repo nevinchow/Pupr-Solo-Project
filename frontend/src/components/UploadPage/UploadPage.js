@@ -5,6 +5,8 @@ import React from 'react'
 import { useHistory } from 'react-router'
 import { uploadPhotos } from '../../store/photo'
 import { useSelector } from 'react-redux'
+import logo from '../../images/github-logo.png'
+import logo2 from '../../images/linkedin-logo.png'
 
 
 function UploadPage() {
@@ -55,7 +57,15 @@ function UploadPage() {
                 <button className="uploadButton"type='submit' onClick={handleSubmit}>Upload</button>
             </form>
             </div>
+            <div className='footer-2'>
+              <h2 className='footerTitle'>Made By: Nevin Chow</h2>
+              <img className="githubLogo" src={logo} height={40} width={40} alt=""/>
+              <a className="gitLink"href='https://github.com/nevinchow'>Github</a>
+              <img className="linkedinLogo" src={logo2} height={40} width={40} alt=""/>
+              <a className="linkedLink" href='https://www.linkedin.com/in/nevin-chow-aa4770221/'>LinkedIn</a>
+            </div>
         </div>
+
     )
 }
 

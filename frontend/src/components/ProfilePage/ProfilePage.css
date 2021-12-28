@@ -11,12 +11,13 @@
 .tileContainer {
     max-width: 70%;
     max-height: 100vh;
-    position: relative;
-    bottom: 400px;
-    left: 50px;
+    margin-left: 5%;
+    margin-top: -13%;
 }
 
 .pageContainer {
     max-height: 100vh;
     overflow-y: auto;
+    position: relative;
+    bottom: 100px;
 }

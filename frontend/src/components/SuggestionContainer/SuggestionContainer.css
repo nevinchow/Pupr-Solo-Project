@@ -46,15 +46,14 @@
 
 .background {
     background-color: transparent;
-    height: 110vh;
+    height: 100vh;
 
 }
 
 .footer {
     background-color: white;
-    position: relative;
-    top: 1130px;
-    height: 60px;
+    margin-top: 40%;
+    height: 100%;
 }
 
 .githubLogo {

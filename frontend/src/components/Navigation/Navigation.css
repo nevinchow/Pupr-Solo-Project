@@ -1,30 +1,33 @@
 .puprLink {
     position: relative;
-    left: 40px;
-    bottom: 69px;
+    margin-left: 3%;
+    bottom: 55px;
     text-decoration: none;
     color: white;
     font-size: 35px;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
-
+    z-index: 1000
 }
 
 .userButton {
     position: relative;
-    left: 2300px;
-    bottom: 75px;
+    margin-left: 90%;
+    bottom: 60px;
     height: 40px;
     width: 40px;
+    z-index: 1000
 }
 
 .signup {
+    margin-left: 90%;
     position: relative;
-    bottom: 72px;
-    left: 2080px;
+    bottom: 82px;
     font-size: 16px;
     text-decoration: none;
     color: white;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    z-index: 1000;
+
 }
 
 .infoContainer {
@@ -36,11 +39,13 @@
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     border-radius: .25rem;
     width: 160px;
+    z-index: 1000;
 }
 
 .profile-dropdown {
     margin: 20px;
     padding: 10px;
+    z-index: 1000;
 }
 
 .infoList {
