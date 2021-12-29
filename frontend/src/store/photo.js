@@ -50,10 +50,14 @@ export const getPhotosByAlbumId = (albumId) => async (dispatch) => {
 
 
 export const uploadPhotos = (payload) => async (dispatch) => {
+    const {file, userId} = payload
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append('userId', userId)
     const response = await csrfFetch('/api/photos', {
     method: 'POST',
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(payload),
+    headers: {"Content-Type": "multipart/form-data"},
+    body: formData,
 });
 const photo = await response.json();
 dispatch(addPhoto(photo));
