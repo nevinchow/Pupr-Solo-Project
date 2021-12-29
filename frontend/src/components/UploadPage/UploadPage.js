@@ -12,16 +12,20 @@ import logo2 from '../../images/linkedin-logo.png'
 function UploadPage() {
     const dispatch = useDispatch();
     const [imageUrl, setImageUrl] = useState("")
+    const [file, setFile] = useState("")
     const history = useHistory();
     const user = useSelector(state => state.session.user)
     const [errors, setErrors] = useState([]);
-
+    const updateFile = (e) => {
+        const file = e.target.files[0];
+        if (file) setFile(file);
+      };
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = {
-            imageUrl,
+            file,
             userId: user.id
         }
         setErrors([])
@@ -49,10 +53,9 @@ function UploadPage() {
             <form >
                     <input
                     className="imageUrlInput"
-                    placeholder='Image URL'
-                    type="text"
-                    value={imageUrl}
-                    onChange={(e) => setImageUrl(e.target.value)}
+                    name='file'
+                    type="file"
+                    onChange={updateFile}
                     />
                 <button className="uploadButton"type='submit' onClick={handleSubmit}>Upload</button>
             </form>

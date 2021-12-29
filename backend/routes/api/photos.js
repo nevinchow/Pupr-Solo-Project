@@ -7,15 +7,12 @@ const asyncHandler = require('express-async-handler')
 const {requireAuth } = require('../../utils/auth');
 const { handleValidationErrors } = require('../../utils/validation');
 const { check } = require('express-validator');
+const {singlePublicFileUpload, singleMulterUpload} = require('../../awsS3.js')
 
 const { Photo, Photo_Album, Album } = require('../../db/models')
 
 
 const validateUpload = [
-    check('imageUrl')
-        .exists({checkFalsy: true})
-        .notEmpty()
-        .withMessage('Please provide a valid link'),
     handleValidationErrors
 ]
 
@@ -88,11 +85,11 @@ router.delete('/:id', asyncHandler(async (req, res) => {
 }))
 
 
-router.post('/', validateUpload, asyncHandler(async (req, res) => {
-    const {name, imageUrl, userId} = req.body
+router.post('/', singleMulterUpload("file"), validateUpload, asyncHandler(async (req, res) => {
+    const {userId} = req.body
+    const photoURL = await singlePublicFileUpload(req.file)
     const photo = await Photo.create({
-        name,
-        imageUrl,
+        imageUrl: photoURL,
         userId
     });
     return res.json(photo)
