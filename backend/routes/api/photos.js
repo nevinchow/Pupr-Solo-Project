@@ -21,6 +21,15 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
     res.json(photos);
 }))
 
+router.get('/favorites', requireAuth, asyncHandler(async (req, res) => {
+    const photos = await Photo.findAll({
+        where: {
+            favorite: true
+        }
+    })
+    res.json(photos);
+}))
+
 router.get('/:id', asyncHandler(async (req, res) => {
     const {id} = req.params
     const photos = await Photo.findAll({
@@ -92,6 +101,17 @@ router.post('/', singleMulterUpload("file"), validateUpload, asyncHandler(async 
         imageUrl: photoURL,
         userId
     });
+    return res.json(photo)
+}))
+
+router.post('/:id/favorite', asyncHandler(async (req, res) => {
+    const {photoId} = req.body
+    const photo = await Photo.findByPk(photoId)
+    if (photo.favorite === false) {
+        photo.update({favorite: true})
+    } else if (photo.favorite === true) {
+        photo.update({favorite: false})
+    }
     return res.json(photo)
 }))
 
