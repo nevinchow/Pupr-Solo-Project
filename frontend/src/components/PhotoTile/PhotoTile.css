@@ -34,3 +34,12 @@
     border-radius: 2px;
 }
 
+.far {
+    position: absolute;
+    margin-left: 92%;
+}
+
+.fas {
+    position: absolute;
+    margin-left: 92%;
+}

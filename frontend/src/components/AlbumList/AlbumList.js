@@ -24,7 +24,7 @@ function AlbumList({album}) {
 
     return (
         <div className="indivdiualAlbumContainer">
-             <span className="album"onClick={onClick} key={album.id} href={``} >{album.name}</span>
+             <a className="album"onClick={onClick} key={album.id}>{album.name}</a>
              <button className="deleteAlbumButton" onClick={(e) => {handleDeleteItem(e, album)}}>Delete</button>
         </div>
     )

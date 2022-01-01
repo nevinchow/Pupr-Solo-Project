@@ -7,7 +7,7 @@ import { useState } from "react";
 import { createAlbum } from "../../store/album";
 import { useHistory } from 'react-router'
 import "./AlbumContainer.css"
-
+import Favorite from "../Favorite";
 
 function AlbumContainer() {
     const dispatch = useDispatch();
@@ -55,7 +55,8 @@ function AlbumContainer() {
              <ul className= 'uploadAlbumError'>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
-            {filteredAlbums.map((album) => <AlbumList key={album.id} album={album} />)}
+            {filteredAlbums.slice(0,1).map((album) => <Favorite key={album.id} album={album} />)}
+            {filteredAlbums.slice(1).map((album) => <AlbumList key={album.id} album={album} />)}
         </div>
     )
 }

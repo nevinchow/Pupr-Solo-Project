@@ -40,13 +40,17 @@ export const getPhotos = () => async (dispatch) => {
     const photos = await reponse.json();
     dispatch(loadPhotos(photos))
 }
+export const getFavoritePhotos = () => async (dispatch) => {
+    const reponse = await fetch(`/api/photos/favorites`)
+    const photos = await reponse.json();
+    dispatch(loadPhotos(photos))
+}
 
 export const getPhotosByAlbumId = (albumId) => async (dispatch) => {
     const response = await fetch(`/api/albums/${albumId}`)
     const photos = await response.json();
     dispatch(loadPhotos(photos))
 }
-
 
 
 export const uploadPhotos = (payload) => async (dispatch) => {
@@ -63,6 +67,19 @@ const photo = await response.json();
 dispatch(addPhoto(photo));
 return photo;
 };
+
+export const makeFavorite = (payload) => async (dispatch) => {
+    const response = await csrfFetch(`/api/photos/${payload.photoId}/favorite`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload)
+    })
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(addPhoto(data))
+        return data
+    }
+}
 
 export const editPhotos = (payload) => async (dispatch) => {
     const response = await csrfFetch(`/api/photos/${payload.photoId}/edit`, {
@@ -84,7 +101,7 @@ const initialState = {
 const photoReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_PHOTOS:
-            let newState = {...state};
+            let newState = {};
             action.photos.forEach(photo => {
                 newState[photo.id] = photo;
             });

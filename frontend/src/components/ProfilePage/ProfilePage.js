@@ -9,6 +9,7 @@ import { removePhoto } from "../../store/photo";
 import { Redirect, useHistory } from 'react-router'
 import AlbumContainer from "../AlbumContainer/AlbumContainer";
 import './ProfilePage.css'
+import { makeFavorite } from "../../store/photo";
 
 function ProfilePage() {
     const dispatch = useDispatch();
@@ -18,7 +19,6 @@ function ProfilePage() {
     const user = useSelector(state => state.session.user)
     const userId = user?.id
     const filteredPhotos = photos.filter((photo) => photo.userId === userId)
-    console.log(filteredPhotos)
     const [showEditPhotoForm, setShowEditPhotoForm] = useState(false)
     const [photoId, setPhotoId ] = useState("")
 
@@ -33,6 +33,8 @@ function ProfilePage() {
 
         history.push('/api/photos')
     }
+
+
 
     useEffect(() => {
         setShowEditPhotoForm(false);
@@ -60,7 +62,7 @@ function ProfilePage() {
                     photo={photo}
                     onClick={(e) => {onClick(e,photo)}}/>
                     <button className="deleteButton1" onClick={(e) => {handleDeleteItem(e, photo)}}>Delete</button>
-                    </> 
+                    </>
                     )}
 
                     {content}
