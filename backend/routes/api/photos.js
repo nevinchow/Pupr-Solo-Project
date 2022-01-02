@@ -48,8 +48,8 @@ router.post('/:id/edit', singleMulterUpload("file"),asyncHandler(async (req, res
 
     const photoToUpdate = await Photo.findByPk(id)
 
-    const imageURL = photoToUpdate.imageUrl.slice(47)
-    await deleteObject2(imageURL)
+    const imageURL = photoToUpdate.imageUrl.split('/')
+    await deleteObject2(imageURL[3])
     let photo = {};
 
     photo = {fileUrl}
@@ -95,8 +95,8 @@ router.post('/:id/edit', singleMulterUpload("file"),asyncHandler(async (req, res
 router.delete('/:id', asyncHandler(async (req, res) => {
     const {id} = req.params
     const photo = await Photo.findByPk((parseInt(req.params.id)))
-    const imageUrl = photo.imageUrl.slice(37)
-    await deleteObject2(imageUrl)
+    const imageUrl = photo.imageUrl.split('/')
+    await deleteObject2(imageUrl[3])
     photo.destroy();
     return res.json({id})
 }))
