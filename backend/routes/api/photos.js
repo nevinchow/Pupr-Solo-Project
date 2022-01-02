@@ -7,7 +7,7 @@ const asyncHandler = require('express-async-handler')
 const {requireAuth } = require('../../utils/auth');
 const { handleValidationErrors } = require('../../utils/validation');
 const { check } = require('express-validator');
-const {singlePublicFileUpload, singleMulterUpload} = require('../../awsS3.js')
+const {singlePublicFileUpload, singleMulterUpload, deleteObject2} = require('../../awsS3.js')
 
 const { Photo, Photo_Album, Album } = require('../../db/models')
 
@@ -89,6 +89,8 @@ router.post('/:id/edit', asyncHandler(async (req, res) => {
 router.delete('/:id', asyncHandler(async (req, res) => {
     const {id} = req.params
     const photo = await Photo.findByPk((parseInt(req.params.id)))
+    const imageUrl = photo.imageUrl.slice(37)
+    await deleteObject2(imageUrl)
     photo.destroy();
     return res.json({id})
 }))

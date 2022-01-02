@@ -34,12 +34,23 @@
     border-radius: 2px;
 }
 
-.far {
+i.far {
     position: absolute;
     margin-left: 92%;
 }
 
-.fas {
+i.fas {
     position: absolute;
     margin-left: 92%;
+}
+
+.icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f2bd";
 }
