@@ -9,11 +9,15 @@ function EditPhotoForm({photos, hideForm, photoId}) {
     const dispatch = useDispatch();
     const albums = useSelector(state => Object.values(state.album))
     const [imageUrl, setImageUrl] = useState(photos.imageUrl)
+    const [file, setFile] = useState("")
     const [albumName, setAlbumName ] = useState("")
     const updateImageUrl = (e) => setImageUrl(e.target.value)
     const updateAlbumName = (e) => setAlbumName(e.target.value)
 
-
+    const updateFile = (e) => {
+        const file = e.target.files[0];
+        if (file) setFile(file);
+      };
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -21,9 +25,8 @@ function EditPhotoForm({photos, hideForm, photoId}) {
         const payload = {
             ...photos,
             photoId,
-            imageUrl,
-            albumName
-
+            albumName,
+            file,
         };
         let updatedPhoto = await dispatch(editPhotos(payload))
         if (updatedPhoto) {
@@ -43,10 +46,9 @@ function EditPhotoForm({photos, hideForm, photoId}) {
             <form onSubmit={handleSubmit}>
                 <input
                 className="editURL"
-                type="imageUrl"
-                placeholder="Image URL"
-                value={imageUrl}
-                onChange={updateImageUrl} />
+                name='file'
+                type="file"
+                onChange={updateFile} />
                 <select
                 className="dropdown"
                 value={albumName}

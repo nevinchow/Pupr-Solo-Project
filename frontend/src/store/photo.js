@@ -82,10 +82,15 @@ export const makeFavorite = (payload) => async (dispatch) => {
 }
 
 export const editPhotos = (payload) => async (dispatch) => {
+    const {photoId, albumName, file} = payload
+    const formData = new FormData();
+    formData.append('photoId', photoId);
+    formData.append('albumName', albumName);
+    formData.append('file', file);
     const response = await csrfFetch(`/api/photos/${payload.photoId}/edit`, {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(payload)
+        headers: {"Content-Type": "multipart/form-data"},
+        body: formData,
     })
         if (response.ok) {
             const data = await response.json();

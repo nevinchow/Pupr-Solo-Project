@@ -41,15 +41,21 @@ router.get('/:id', asyncHandler(async (req, res) => {
     res.json(photos);
 }))
 
-router.post('/:id/edit', asyncHandler(async (req, res) => {
+router.post('/:id/edit', singleMulterUpload("file"),asyncHandler(async (req, res) => {
     const {id} = req.params
-    const {imageUrl, albumName} = req.body
+    const {albumName} = req.body
+    const fileUrl = await singlePublicFileUpload(req.file)
 
     const photoToUpdate = await Photo.findByPk(id)
+
+    const imageURL = photoToUpdate.imageUrl.slice(47)
+    await deleteObject2(imageURL)
     let photo = {};
 
-    photo = {imageUrl}
-    updatedPhoto = await photoToUpdate.update(photo)
+    photo = {fileUrl}
+
+    updatedPhoto = await photoToUpdate.update({imageUrl: fileUrl})
+
 
     const album = await Album.findOne({
         where: {
