@@ -5,6 +5,21 @@ Pupr is a web application for uploading and storing photos. It was
 
 Sign up and Upload at [pupr-aa-project.herokuapp.com/](https://pupr-aa-project.herokuapp.com/)
 
+
+
+# Features of Pupr
+
+All features require user authorization. Demo login is provided.
+
+## 1. Image Post CRUD
+* Users are able to create, edit, and delete posts by inputting a title, description, and an image file.
+
+### Image Upload Page
+![Alt text](https://i.gyazo.com/8294c5901a0c9a8a93a73c98f3f80bc1.jpg)
+
+### Edit Post
+![Alt text](https://i.gyazo.com/39b7a4f89439569939ca3aa88c676c0a.png)
+
 ### Landing Page:
 ![](https://i.ibb.co/TgCzgyr/7f7ea4a05b7a95092be501b9707623af.jpg)
 

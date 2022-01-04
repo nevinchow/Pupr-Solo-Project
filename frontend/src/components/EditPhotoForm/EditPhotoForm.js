@@ -8,6 +8,7 @@ import './EditPhotoForm.css'
 function EditPhotoForm({photos, hideForm, photoId}) {
     const dispatch = useDispatch();
     const albums = useSelector(state => Object.values(state.album))
+    const filteredAlbums = albums.filter((album) => album.id !== 1)
     const [imageUrl, setImageUrl] = useState(photos.imageUrl)
     const [file, setFile] = useState("")
     const [albumName, setAlbumName ] = useState("")
@@ -54,7 +55,7 @@ function EditPhotoForm({photos, hideForm, photoId}) {
                 value={albumName}
                 onChange={updateAlbumName}>
                     <option value="">Select an Album</option>
-                    {albums.map((album) => <option key={album.id} value={album.name} >{album.name}</option>)}
+                    {filteredAlbums.map((album) => <option key={album.id} value={album.name} >{album.name}</option>)}
                 </select>
                 <button className="updatePhotoButton" type="submit">Update Photo</button>
                 <button className="cancelUpdateButton" type="button" onClick={handleCancelClick}>Cancel</button>
