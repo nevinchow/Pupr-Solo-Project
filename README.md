@@ -35,7 +35,7 @@ All features require user authorization. Demo login is provided.
 ### Albums Bar:
 * Users are able to create and view their albums. Clicking on an album will filter out all photos that are not in that album.
 
-![](https://i.gyazo.com/9675c8b0d95685b0774029bbd7da3ff3.png)
+![](https://i.gyazo.com/dbe16247dd3484f297dab877a3be3736.png)
 
 ### Home View:
 
