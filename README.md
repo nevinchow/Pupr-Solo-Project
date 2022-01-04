@@ -16,21 +16,25 @@ All features require user authorization. Demo login is provided.
 
 ### Image Upload Page:
 * Page users land on upon sigining up/logging in.
+
 ![](https://i.gyazo.com/8294c5901a0c9a8a93a73c98f3f80bc1.jpg)
 
 ### Image Tile:
 * Uploaded images are able to be favorited.
+
 ![](https://i.gyazo.com/9349a1d53bd0293bbf14b669dc09cc1e.png)
 
 
 ### Edit Image:
 * An image can be edited by uploading a new file and/or by changing the album it is assigned to.
+
 ![](https://i.gyazo.com/ee61b91a69df4429c7440261423877f1.jpg)
 
 
 
 ### Albums Bar:
 * Users are able to create and view their albums. Clicking on an album will filter out all photos that are not in that album.
+
 ![](https://i.gyazo.com/9675c8b0d95685b0774029bbd7da3ff3.png)
 
 ### Home View:
@@ -38,7 +42,7 @@ All features require user authorization. Demo login is provided.
 ![](https://i.ibb.co/DzDhnny/a3318844eccf2d9cb0f535c323e4ba61.jpg)
 
 ### Technical Details:
-* Pupr allows for people to create accounts that they can use to upload photos of their pets and animals. A user is not required to specify an album when uploading a photo. If the user decides to afterwards, however, they are also able to. After an image URL is provided, the page should refresh with the photo now rendered on the page. Upon clicking on an album, the user can expect the photos that are not in that album to be filtered.
+* Pupr allows for people to create accounts that they can use to upload photos of their pets and animals. A user is not required to specify an album when uploading a photo. If the user decides to afterwards, however, they are also able to. After an file is provided, it is uploaded to an AWS S3 Bucket, and the page should refresh with the photo now rendered on the page. Upon clicking on an album, the user can expect the photos that are not in that album to be filtered.
 
 
 ### Features
