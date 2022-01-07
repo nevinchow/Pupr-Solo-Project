@@ -1,7 +1,4 @@
 .puprLink {
-    position: relative;
-    margin-left: 3%;
-    bottom: 55px;
     text-decoration: none;
     color: white;
     font-size: 35px;
@@ -19,15 +16,13 @@
 }
 
 .signup {
-    margin-left: 90%;
-    position: relative;
-    bottom: 82px;
     font-size: 16px;
     text-decoration: none;
     color: white;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     z-index: 1000;
-
+    margin-top: 0.5%;
+    margin-right: 3%;
 }
 
 .infoContainer {
@@ -51,4 +46,22 @@
 .infoList {
     position: relative;
     left: 10px;
+}
+
+.logo-pupr {
+    display: flex;
+    width: 5%;
+    height: 5vh;
+    margin-left: 3%;
+    position: relative;
+    bottom: 75px;
+    justify-content: space-evenly;
+    align-items: flex-end
+}
+
+.login-signup-container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 105px;
 }

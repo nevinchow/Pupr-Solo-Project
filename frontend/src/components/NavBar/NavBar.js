@@ -27,7 +27,6 @@ function NavBar() {
     } else {
         return (
         <div className='navBar'>
-        <img className="dotsLogo" src={logo} height={30} width={30} alt=""/>
         </div>
         )
     }
