@@ -32,12 +32,21 @@ function SuggestionContainer() {
           </div>
             <div className='footer'>
               <h2 className='footerTitle'>Made By: Nevin Chow</h2>
-              <div>
+              <div className='github-linkedin-container'>
+              <div className='github-container'>
+              <a className='githublogo-link' href='https://github.com/nevinchow'>
               <img className="githubLogo" src={logo} height={40} width={40} alt=""/>
-              <a className="gitLink"href='https://github.com/nevinchow'>Github</a>
+
+              </a>
+              <a className="gitLink" href='https://github.com/nevinchow'>Github</a>
               </div>
+              <div className='linkedin-container'>
+              <a className='linkedinlogo-link' href='https://www.linkedin.com/in/nevin-chow-aa4770221/'>
               <img className="linkedinLogo" src={logo2} height={40} width={40} alt=""/>
+              </a>
               <a className="linkedLink" href='https://www.linkedin.com/in/nevin-chow-aa4770221/'>LinkedIn</a>
+              </div>
+              </div>
             </div>
         </div>
       </div>
