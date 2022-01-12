@@ -13,9 +13,9 @@
 .uploadLink {
     color: white;
     text-decoration: none;
+    margin-left: 12%;
     position: relative;
-    left: 200px;
-    top: 25px;
+    top: 80px;
     padding-left: 5px;
     padding-right: 5px;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
@@ -26,8 +26,8 @@
     color: white;
     text-decoration: none;
     position: relative;
-    left: 230px;
-    top: 25px;
+    top: 80px;
+    margin-left: 5%;
     padding-left: 5px;
     padding-right: 5px;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;

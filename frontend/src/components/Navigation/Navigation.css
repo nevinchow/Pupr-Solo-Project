@@ -8,10 +8,10 @@
 
 .userButton {
     position: relative;
-    margin-left: 90%;
-    bottom: 60px;
-    height: 40px;
-    width: 40px;
+    margin-left: 92%;
+    bottom: 120px;
+    height: 3vh;
+    width: 2%;
     z-index: 1000
 }
 

@@ -18,7 +18,6 @@ function NavBar() {
     if (sessionUser) {
         return (
             <div className='navBar'>
-                <img className="dotsLogo" src={logo} height={30} width={30} alt=""/>
                 <NavLink className="uploadLink" to="/api/photos/upload" alt="">Upload Photo</NavLink>
                 <NavLink onClick={onClick} className="photoLink" to="/api/photos" alt="">Photos</NavLink>
             </div>
