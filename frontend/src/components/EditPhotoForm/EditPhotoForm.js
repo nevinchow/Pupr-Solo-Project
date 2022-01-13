@@ -9,10 +9,8 @@ function EditPhotoForm({photos, hideForm, photoId}) {
     const dispatch = useDispatch();
     const albums = useSelector(state => Object.values(state.album))
     const filteredAlbums = albums.filter((album) => album.id !== 1)
-    const [imageUrl, setImageUrl] = useState(photos.imageUrl)
     const [file, setFile] = useState("")
     const [albumName, setAlbumName ] = useState("")
-    const updateImageUrl = (e) => setImageUrl(e.target.value)
     const updateAlbumName = (e) => setAlbumName(e.target.value)
 
     const updateFile = (e) => {

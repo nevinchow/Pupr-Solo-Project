@@ -22,8 +22,8 @@ function PhotoTile({photo, onClick}) {
                             <img className="photo" key={photo.id} src={`${photo.imageUrl}`} alt=""/>
                             <button className="editButton" onClick={onClick}>Edit</button>
                             {photo.favorite === false ?
-                            <i class="far fa-heart" onClick={(e) => {handleFavorite(e, photo)}} ></i> :
-                            <i class="fas fa-heart" onClick={(e) => {handleFavorite(e, photo)}} ></i>
+                            <i className="far fa-heart" onClick={(e) => {handleFavorite(e, photo)}} ></i> :
+                            <i className="fas fa-heart" onClick={(e) => {handleFavorite(e, photo)}} ></i>
                             }
 
             </div>

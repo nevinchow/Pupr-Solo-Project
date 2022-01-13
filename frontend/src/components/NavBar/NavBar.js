@@ -1,7 +1,6 @@
 import './NavBar.css'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import logo from '../../images/768px-Flickr_dots.svg.png'
 import { useDispatch } from 'react-redux';
 import { getPhotos } from '../../store/photo';
 

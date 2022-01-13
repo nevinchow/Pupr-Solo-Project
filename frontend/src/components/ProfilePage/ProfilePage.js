@@ -6,10 +6,9 @@ import { useState } from "react";
 import EditPhotoForm from "../EditPhotoForm/EditPhotoForm";
 import PhotoTile from "../PhotoTile/PhotoTile";
 import { removePhoto } from "../../store/photo";
-import { Redirect, useHistory } from 'react-router'
+import { useHistory } from 'react-router'
 import AlbumContainer from "../AlbumContainer/AlbumContainer";
 import './ProfilePage.css'
-import { makeFavorite } from "../../store/photo";
 
 function ProfilePage() {
     const dispatch = useDispatch();

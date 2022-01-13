@@ -5,13 +5,10 @@ import React from 'react'
 import { useHistory } from 'react-router'
 import { uploadPhotos } from '../../store/photo'
 import { useSelector } from 'react-redux'
-import logo from '../../images/github-logo.png'
-import logo2 from '../../images/linkedin-logo.png'
 
 
 function UploadPage() {
     const dispatch = useDispatch();
-    const [imageUrl, setImageUrl] = useState("")
     const [file, setFile] = useState("")
     const history = useHistory();
     const user = useSelector(state => state.session.user)
